@@ -1,0 +1,491 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+\geometry{top=1cm}
+\geometry{bottom=1cm}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experienontinuing me section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{setspace}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+% \vspace{-4em}
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Arjun Pitchanathan} \\[7.5pt]
+\href{mailto:arjunpitchanathan@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ arjunpitchanathan@gmail.com} \ $|$ \ 
+Work Authorized in the UK (Global Talent Visa) % \ $|$ \ 
+% \href{https://github.com/Superty}{\raisebox{-0.05\height}\faGithub\ superty} % \ $|$ \ 
+% \href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
+% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
+
+% \href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\end{tabularx}
+
+% \textbf{Dean's List.} Awarded the Dean's merit list for academic excellence twice. % for the Monsoon '18 and Monsoon '19 semesters.
+
+% \cvitem{ACM ICPC 2018}{Member of team tesla\_protocol which came \href{https://icpc.baylor.edu/regionals/finder/ICPC-Gwalior-Pune-2018/standings}{\textbf{3rd} in the Asia Gwalior-Pune Onsite Round} and \href{https://icpc.baylor.edu/regionals/finder/AMP-2018/standings}{\textbf{5th} in the Asia Amritapuri Onsite Round}. The ACM ICPC is the most prestigious university-level programming competition. }
+
+%\cvitem{Codeforces}{Peak rating: 2225. \textbf{Top 2000 in the world} out of 175000+ users (98.8 percentile); Peak ranking: \textbf{top 15 in India} out of 5000+ users. Handle: Superty. Codeforces is a website that regularly hosts algorithmic programming competitions. Rating is based on performance in these competitions.}
+
+% \cvitem{Codeforces}{Peak rating: 2225. \textbf{Top 2000 in the world} out of 175000+ users (98.8 percentile); \textbf{top 15 in India} out of 5000+ users. Handle: Superty. Codeforces is a website that regularly hosts algorithmic programming competitions. Rating is based on performance in these competitions.}
+
+%\cvitem{ACM ICPC 2015}{Member of team \underline{not\_interested} which came \underline{\href{https://icpc.baylor.edu/regionals/finder/amp-2015/standings}{32nd in the Asia-Amritapuri Onsite Round}}. We also came \underline{\href{https://icpc.baylor.edu/regionals/finder/asia-amritapuri-first-round-2015/standings}{36th in the Asia-Amritapuri Online Regionals}} out of 1500+ teams that participated and \underline{\href{https://icpc.baylor.edu/regionals/finder/chennai-india-2015/standings}{22nd in the Asia-Chennai Online Regionals}}, out of 1000+ teams. The ACM ICPC is the most prestigious programming competition at the college level. }
+
+% \cvitem{CodeChef SnackDown 2016}{Member of team lamecoders which placed \textbf{6th among Indian teams} and was \textbf{ranked 24th internationally} in the final round. We were ranked 21st among Indian teams in the online elimination round out of 1000+ Indian teams.}
+
+
+% \cventry{2019--2021 (expected)}{MS by Research in Computer Science}{International Institute of Information Technology}{Hyderabad}{}{}
+% \cventry{2015--2019}{B.Tech in Computer Science}{International Institute of Information Technology}{Hyderabad}{}{} %{CGPA -- 8.46}{}
+% \cventry{2022--2025 (expected)}{PhD Student in Informatics}{University of Edinburgh}{}{}{Advisor: Tobias Grosser} % arguments 3 to 6 can be left empty
+% \cventry{2015--2021}{Bachelor's and MS in Computer Science}{IIIT Hyderabad}{}{}{}
+% \cventry{2015--2021}{Dual Degree Bachelor's and MS in Computer Science}{International Institute of Information Technology, Hyderabad}{}{CGPA --- 8.46}{}
+% \cventry{2014--2015}{Senior Secondary, CBSE}{Chennai Public School}{Chennai}{}{} %{\textit{Percentage -- 93.2}}{}
+% \cventry{2012--2013}{Secondary, CBSE}{Chennai Public School}{Chennai}{}{} %{\textit{CGPA -- 9.8}}{}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+% \section{Summary}
+% This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+\vspace{-0.5em}
+\section{Professional Summary}
+Experience in \textbf{low-level performance engineering, compilers, and algorithms} across the stack:
+\begin{itemize}
+    \item \underline{implemented and maintain the integer linear programming (ILP) solver in MLIR} \href{https://github.com/llvm/llvm-project/blob/main/mlir/lib/Analysis/Presburger/Simplex.cpp#L1996}{[code]}
+    \item optimized an ILP solver for compiler workloads using C++ templates \& AVX-512 vector intrinsics to achieve a \underline{3.6x speedup over SOTA}  \href{https://2021.splashcon.org/details/splash-2021-oopsla/66/FPL-Fast-Presburger-Arithmetic-through-Transprecision}{[Distinguished Paper at OOPSLA]}
+    \item research on \underline{cache hierarchy miss rate prediction} \href{https://dl.acm.org/doi/10.1145/3656452}{[paper at PLDI]} % for MLIR Affine
+    \item designed \underline{asymptotically better ILP algorithms} for our compiler use-case \href{https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14}{[paper at CAV]}
+    \item performance debugging: reading flamegraphs, LLVM IR, x86-64 assembly, architecture diagrams, ...
+    \item benchmarking with \href{https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/programmer-references/58550-0.01.pdf}{PMCs}, minimizing noise from frequency scaling, SMT, context switches, ...
+
+    % \item benchmarking: minimizing measurement noise from 
+    % \item 
+    % \item reading LLVM IR or corresponding CFGs to diagnose missed compiler optimizations, and  \\using C++ attributes to guide the compiler to generate the desired code
+    % \item using AVX-512 vector intrinsics to vectorize a Simplex-based LP solver
+    % \item using C++ template metaprogramming to minimize branching at runtime
+    % \item using Linux perf and flame graphs to locate bottlenecks
+\end{itemize}
+Strong math background evidenced by experience in theoretical research.
+% I also have experience in theoretical AI safety.
+% I wrote and maintain the ILP solver in MLIR.
+% I upstreamed an ILP solver to the LLVM project and remain its lead maintainer, in which capacity \\ I have reviewed 99 pull requests and worked with up to four other contributors at a time. \\
+% My PhD thesis will be on compiler algorithms.
+
+\vspace{-0.4em}
+\section{Open-Source Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{MLIR Presburger Library} & \hfill
+\href{https://github.com/llvm/llvm-project/commits/main?author=superty}{[Commits]} 
+\href{https://github.com/search?q=repo\%3Allvm\%2Fllvm-project+\%22Reviewed+By\%3A+arjunp\%22\&type=commits\&p=1}{[Reviewing]}
+\href{https://github.com/llvm/llvm-project/pulls?q=is\%3Apr+reviewed-by\%3Asuperty+}{[More Reviewing]} 
+\href{https://grosser.science/FPL}{[Website]} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}
+\vspace{-0.5em}
+\item Lead maintainer of the Presburger library of the LLVM/MLIR open-source compiler framework 
+\item Reviewed 99 pull requests and worked with a team of up to four other contributors
+\item Added support for multiprecision integers to LLVM based on APInt \& optimized it for our workload 
+\end{itemize}}
+\end{tabularx}
+% , and is tailored to the use case of polyhedral compilation.
+% \vspace{-2em}
+
+\vspace{-0.4em}
+\section{Work Experience}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Visiting Research Student} at the \textbf{University of Cambridge} & \hfill May 2024 --- Present \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{
+% \vspace{-1em}
+% % \begin{itemize}
+% % \item Research on an accurate and efficiently computable predictive model for CPU caches
+% % \item Empirically investigated what features must be modeled to achieve accuracy in practice
+% % \item Designed and implemented a modeling algorithm that is theoretically and practically efficient
+% % \end{itemize}
+% I did the second half of my PhD in Cambridge, as my advisor moved there.
+% \begin{itemize}
+% \item Research on efficient and accurate cache performance prediction for neural networks
+% \item Designed an algorithm, proved its correctness \& efficiency, and implemented it in C++
+% \item Optimized performance hotspots in the implementation using vector intrinsics
+% \end{itemize}
+% }
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Student Researcher} at \textbf{Google DeepMind (Paris), France} & \hfill November 2023 --- February 2024 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Worked on static analysis for tiled linear algebraic kernels. I developed asymptotically faster algorithms for ILP for subclasses relevant to compilers, with proofs of efficiency \& correctness. \hfill \href{https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14}{[Paper @ CAV]}
+% I showed that the problem is still NP-hard and devised an algorithm that runs in pseudo-linear time in a parameter that is small in practice. Then, we identified a further restricted subclass that usually suffices, for which I devised a polynomial-time algorithm. The work was \href{https://arxiv.org/abs/2405.11244}{published at CAV 2024}.
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Research Intern} at \textbf{ETH Z\"urich, Switzerland} & \hfill August 2019 --- April 2020 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+% \vspace{-1em}
+Wrote the MLIR Presburger library (see above) and worked on papers published at OOPSLA '20 and '21.
+% \begin{itemize}
+% Wrote an optimized C++ library for deciding formulas in Presburger arithmetic, of which ILP is a special case. We upstreamed the library to LLVM/MLIR. Our work won a Distinguished Paper Award at OOPSLA 2021. 
+% \item Implemented an algorithm for parametric integer linear programming
+% \item Optimized for the common case using template specialization and AVX-512 vector intrinsics
+% \item Our paper on the library \href{https://2021.splashcon.org/details/splash-2021-oopsla/66/FPL-Fast-Presburger-Arithmetic-through-Transprecision}{won a Distinguished Paper Award at OOPSLA 2021}
+% \item I \href{https://grosser.science/FPL/}{upstreamed} most of my code to the LLVM/MLIR project
+% \end{itemize}
+}
+% \vspace{-1em}
+\end{tabularx}
+% Wrote a fast C++ library for deciding formulas in Presburger arithmetic. Our paper on the library \href{https://2021.splashcon.org/details/splash-2021-oopsla/66/FPL-Fast-Presburger-Arithmetic-through-Transprecision}{won a Distinguished Paper Award at OOPSLA 2021}. I \href{https://grosser.science/FPL/}{upstreamed} most of my code to the LLVM project.
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Teaching Assistant} at \textbf{IIIT Hyderabad, India} & \hfill Monsoon 2018, Spring 2019 semesters \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Served as a TA for the cryptography and algorithms courses.} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Research Intern} at \textbf{Tata Institute of Fundamental Research, Mumbai, India} & \hfill May --- July 2018 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Studied approximation algorithms and hardness of approximation (via probabilistically checkable proofs).} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Engineering Intern} at \textbf{Google Z\"urich, Switzerland} & \hfill May --- August 2017 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Worked on performance optimizing RPC calls in a C++ microservices framework.} \\
+\end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Coach} at the \textbf{Indian IOI Training Camp} & \hfill 2016, 2018 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Part of the team that took classes, prepared problems and test data, and evaluated students' solutions at the International Olympiad in Informatics Training Camp (IOITC), which is held to select a team to represent India at the International Olympiad in Informatics (IOI).} \\
+% \end{tabularx}
+
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2024 -- present & Visiting PGR Student at the \textbf{University of Cambridge}, UK \normalsize (Advisor: Tobias Grosser) \\
+2022 -- present & PhD in Informatics at the \textbf{University of Edinburgh}, UK \normalsize (Advisor: Tobias Grosser) \\
+& \emph{Thesis title: Efficient Static Analysis for Neural Networks} \\
+& \emph{I did the second half of my PhD in Cambridge, as my advisor moved there.} \\
+% 2019 -- 2021 & Master of Science in Computer Science and Engineering at IIIT Hyderabad \\ 
+2015 -- 2021 & Bachelor's and MS in Computer Science and Engineering at \textbf{IIIT Hyderabad}, India \\ 
+\end{tabularx}
+
+\vspace{-0.3em}
+\section{Skills}
+\begin{spacing}{1.24}
+% Performance engineering, compilers, benchmarking, discrete mathematics, theoretical CS, algorithms. \\
+Compilers, performance engineering, benchmarking, theoretical computer science, algorithms. \\
+C++, Python, shell scripting (daily use). x86-64 assembly, LLVM IR (mostly reading, some writing). \\
+Familiarity with GPU architecture (programming massively parallel processors book).
+% Familiarity with binary exploitation (\href{https://pwn.college/}{pwn.college} course).
+\end{spacing}
+\vspace{-0.3em}
+\section{Achievements}
+\textbf{Bronze Medal at the International Olympiad in Informatics (IOI) '15.}
+% at the IOI and was \textbf{awarded a Bronze Medal} for my performance. % Was \textbf{one of four students selected nationally} to represent India at the IOI '15.
+
+% \pagebreak 
+\textbf {International Collegiate Programming Competition (ICPC) World Finalist '20.}  \\ My team (tesla\_protocol) competed at the World Finals and \href{https://pc2.ecs.baylor.edu/scoreboard/}{placed 46th internationally}. % We qualified for the World Finals by placing \href{https://algo.codemarshal.org/contests/awf-19/standings}\textbf{7th} in the Asia West Continent Final contest. % We also came \href{https://icpc.baylor.edu/regionals/finder/AMP-2019/standings}{\textbf{6th} in the Asia-Amritapuri regionals} and \href{https://icpc.baylor.edu/regionals/finder/Asia-Kanpur-2019/standings}{\textbf{4th} in the Asia-Kanpur regionals}.
+% The ICPC is the most prestigious university-level programming competition.
+
+% \pagebreak
+% \textbf{Distinguished Paper Award at OOPSLA 2021}. OOPSLA is a premier systems conference. The award was given to 6 out of 205 submitted papers.
+
+
+% \pagebreak
+
+
+
+
+% The IOI is the most prestigious school-level programming competition.
+
+% \begin{tabularx}{\linewidth}{@{}l X@{}}
+% Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
+% Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+% \end{tabularx}
+
+% \section{Work Experience (Theory)}
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Visiting Researcher} at the \textbf{Alignment Research Center} & \hfill August 2025 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{
+% \vspace{-1em}
+% Worked with a team of math/theoretical CS PhDs. In two weeks, I found a counterexample for a proposed algorithm, showing it yielded poor approximations. The problem had been open for two months.
+% % AI safety research towards mechanistic anomaly detection. Specifically, did theoretical research on a toy model involving matrix permanent estimation.
+% }
+% \end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Research Scholar} at the \textbf{ML Alignment \& Theory Scholars Program} & \hfill February --- May 2024 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{
+% Worked on Markov decision process theory. 
+% % AI safety research on Vanessa Kosoy's learning-theoretic agenda. Specifically, I worked on MDP theory.
+% } % Vanessa Kosoy on the learning-theoretic agenda for AI alignment.
+% \end{tabularx}
+
+% \section{Work Experience (Theory)}
+
+% Studied results in theoretical computer science (approximation algorithms and hardness of approximation) under the guidance of Prof. Prahladh Harsha.
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Undergraduate Research} at \textbf{IIIT Hyderabad, India} & \hfill 2017 --- 2018 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Worked on hypergraph theory and communication complexity.} \\
+% \end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Research Intern} at the \textbf{Tata Institute of Fundamental Research, Mumbai, India} & \hfill Summer 2018 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Studied approximation algorithms and hardness of approximation (via probabilistically checkable proofs).} \\
+% \end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Teaching Assistant} at \textbf{IIIT Hyderabad, India} & \hfill 2018 --- 2019 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Served as a TA for the cryptography and algorithms courses.} \\
+% \end{tabularx}
+
+\section{Publications}
+\textbf{Strided Difference Bound Matrices.} \\
+Arjun Pitchanathan, Albert Cohen, Oleksandr Zinenko, Tobias Grosser. 
+\href{https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14}{Published at CAV 2024.}
+
+\textbf{Falcon: A Scalable Analytical Cache Model.} \\
+Arjun Pitchanathan, Kunwar Shaanjeet Singh Grover, Tobias Grosser. 
+\href{https://dl.acm.org/doi/10.1145/3656452}{Published at PLDI 2024.}
+
+\textbf{FPL: Fast Presburger Arithmetic through Transprecision.} \\
+\normalsize Arjun Pitchanathan, Christian Ulmann, Michel Weber, Torsten Hoefler, Tobias Grosser. \\
+\href{https://doi.org/10.1145/3485539}{Published at OOPSLA 2021} and won the \textbf{Distinguished Paper Award}.
+%(given to 6 out of 71 papers).
+
+\textbf{Fast Linear Programming through Transprecision Computing on Small and Sparse Data.} \\
+Tobias Grosser, Theodoros Theodoridis, Maximilian Falkenstein, Arjun Pitchanathan, Michael Kruse, Manuel Rigger, Zhendong Su, and Torsten Hoefler.  \href{https://doi.org/10.1145/3428263}{Published at OOPSLA 2020.}
+
+\vspace{-0.5em}
+\section{Other Research}
+\textbf{Provably Efficient LRU Cache Modeling.} \\
+Arjun Pitchanathan and Tobias Grosser. \emph{Under preparation.}
+
+% \textbf{Compositional Polytope MDPs.} \\
+% Vanessa Kosoy and Arjun Pitchanathan. \emph{Under preparation.}
+
+\textbf{On the Simple Quasi Crossing Number of $K_{11}$.} Arjun Pitchanathan and Saswata Shannigrahi. \\
+Symposium on Graph Drawing and Network Visualization (GD), 2019. Poster with \href{https://arxiv.org/abs/1908.07851}{extended abstract}.
+
+\textbf{Improved Encoding and Counting of Uniform Hypertrees.} \\
+Arjun Pitchanathan and Saswata Shannigrahi. \href{https://arxiv.org/abs/1711.03335v4}{Manuscript.}
+
+\textbf{Decision-Theoretic Compression and Value-Aware Measures of Information and Noise.} \\
+Tushant Jha, Arjun Pitchanathan, and Kannan Srinathan. 
+\href{https://github.com/Superty/dtcompress/blob/master/dtcompress_draft.pdf}{Manuscript.}
+
+\section{Talks}
+I have given talks at:
+\begin{itemize}
+\item the OOPSLA 2021 systems conference \href{https://www.youtube.com/watch?v=UibEvel177w}{[online version of the talk]}
+\item the Programming Language Design and Implementation (PLDI) conference in 2022 and \href{https://www.youtube.com/watch?v=ALOvruhw8sI}{2024}
+\item the Compilers for Machine Learning (C4ML) workshop at CGO 2021
+\item the International Workshop on Polyhedral Compilation Techniques at HiPEAC 2022
+\item the EuroLLVM Developer’s Meeting in 2022 and 2024
+\item the LLVM Developer’s Meeting in 2021, 2022 (MLIR summit), and 2024
+\end{itemize}
+
+\vspace{-0.5em}
+\section{Professional Service}
+\textbf{Reviewer} for \textbf{ACM Transactions on Architecture and Code Optimization}
+
+\textbf{Program Committee Member} for \textbf{IMPACT '23}, \\
+the 13th International Workshop on Polyhedral Compilation Techniques.
+
+\textbf{Artifact Evaluation Committee Member} for \textbf{CC '24}, \\
+the ACM SIGPLAN 33rd International Conference on Compiler Construction.
+
+% \section{Selected Coursework}
+% % \cvitem{Mathematics}{Mathematics II (Group Theory, Linear Algebra) -- A-}
+% % \cvitem{}{Mathematics III (Complex Analysis, Probability) -- B}
+% % \cvitem{Formal Methods (Automata and Formal Languages)}, Operating Systems, Introduction to Databases, Artificial Intelligence, Statistical Methods in Artificial Intelligence*, Computer Networks}
+% % Operating Systems, Artifical Intelligence, Statistical Methods in Artifical Intelligence
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+%  & \hfill Grade (out of 10) \\
+% Algorithms & \hfill 10 \\
+% Data Structures & \hfill 10 \\
+% Graph Theory & \hfill 10 \\
+% Computational Complexity and Advanced Algorithms & \hfill 10 \\
+% Computational Complexity Theory & \hfill 10 \\
+% Quantum Information and Computation & \hfill 10 \\
+% Principles of Information Security (Cryptography) & \hfill 10 \\
+% % Principles of Programming Languages & \hfill 10 \\
+% Compilers & \hfill 10 \\
+
+
+% \section{Teaching and Clubs}
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Teaching Assistant} & \hfill Monsoon 2018; Spring 2019 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Served as TA for the Principles of Information Security course as well as the Algorithms course. %Responsibilities included setting assignment problems, setting questions for 
+% I held tutorial sessions and office hours, set problems, and graded exam papers.} \\
+% \end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Coordinator} of the \textbf{Competitive Programming Club} & \hfill Monsoon 2017; Spring 2018 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{One of two coordinators for the Competitive Programming Club that year. This involved conducting events and
+% teaching topics in computer science, especially involving algorithms and data structures.} \\
+% \end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Student Systems Administrator} & \hfill Monsoon 2017 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Had the opportunity to get some hands-on experience in system administration by helping out the university's full-time staff.} \\
+% \end{tabularx}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Copy-editor} at the \textbf{Ping! Student Magazine} & \hfill Monsoon 2017 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Copy-edited all the articles in that issue, shepherded some articles through the writing process, and co-authored an article titled "Affording Unemployment for All" on the increasing automation of work.} \\
+% \end{tabularx}
+
+% \textit{Note: Monsoon and Spring are the two semesters in IIIT Hyderabad's academic calendar.}
+
+
+
+
+% \cventry{August 2019 -- April 2020}{Research Intern}{ETH Z\"urich}{}{}{Worked with Dr. Tobias Grosser at the Scalable Parallel Computing Lab on a fast modern C++ library for Presburger arithmetic.}
+% \cventry{Summer 2018}{Research Intern}{Tata Institute of Fundamental Research, Mumbai}{}{}{Surveyed results in theoretical computer science (approximation algorithms and hardness of approximation) under the guidance of Prof. Prahladh Harsha.}
+% \cventry{Summer 2017}{Software Engineering Intern}{Google Z\"urich}{}{}{Worked on integrating optimizations in Google's C++ RPC framework into an internal microservices framework.}
+% \cventry{Monsoon 2019, Spring 2019}{Teaching Assistant}{IIIT Hyderabad}{}{}{Served as TA for the Algorithms (Monsoon 2019) and Principles of Information Security (Spring 2019) courses at IIIT-H. Responsibilities included setting quiz question papers, correcting answer papers, as well as holding tutorial sessions and office hours.}
+% \cventry{Spring 2019}{Teaching Assistant, Principles of Information Security}{IIIT Hyderabad}{}{}{Served as TA for the Principles of Information Security course at IIIT-H. Responsibilities included setting quiz question papers, correcting answer papers, as well as holding tutorial sessions and office hours.}
+% \cventry{Monsoon 2019}{Teaching Assistant, Algorithms}{IIIT Hyderabad}{}{}{Served as TA for the introductory Algorithms course at IIIT-H. Responsibilities included setting quiz question papers, correcting answer papers, as well as holding tutorial sessions and office hours.}
+
+% \section{Course Projects}
+% \textbf{Decaf Compiler.} Implemented a compiler for a toy programming language supporting loops, function calls, and recursion, with an LLVM back-end. Some type checking and run-time checking was supported. \href{https://github.com/Compilers-Monsoon2018-IIITH/decaff-compiler-Superty}{[github]}
+
+% \textbf{Raft.} Implemented the Raft distributed consensus protocol in C++ using gRPC for RPC calls. \href{https://github.com/Superty/raft-grpc}{[github]}.
+
+% \textbf{Shell.} Implemented a basic Bash-like shell with features including piping, I/O redirection, background processes, suspending the active process, and \texttt{fg}. Implemented in C using system calls (\texttt{fork}, \texttt{exec}, etc.)
+
+% \textbf{Ultimate Tic Tac Toe Bot.} Part of a team of two that created a bot that played a 4x4x4x4 version of Ultimate Tic Tac Toe. The bot used the min-max algorithm with iterative deepening and a heuristic. We placed second out of 80+ entries in a tournament conducted among all the students in the course. \href{https://github.com/anurudhp/ai-assigment-1}{[github]}.
+
+% \textbf{OpenGL Bloxorz Clone.} Made a game in OpenGL, based on the popular flash game \textit{Bloxorz}. \href{https://github.com/Superty/bloxorz-clone}{[github]}
+
+% \cvitem{Directory Syncing System}{Implemented a file-sharing system in Python using sockets that syncs directories and uses file hashes for verification.}
+
+%\cvitem{Photo Sharing Website}{Was part of a team of two that made a photo sharing website using web2py where users could upload, like, comment on and search for images. }
+%\cvitem{Auction Website}{Was part of a team of four that built an auctioning website. Was responsible for the back-end, which was implemented in express.js, node.js, and MongoDB. }
+% \pagebreak
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Coach} at the \textbf{Indian IOI Training Camp} & \hfill 2016, 2018 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Part of the team that took classes, prepared problems and test data, and evaluated students' solutions at the International Olympiad in Informatics Training Camp (IOITC), which is held to select a team to represent India at the International Olympiad in Informatics (IOI).} \\
+% \end{tabularx}
+% Formal Languages and Automata Theory & 9 \\ \hline
+% Mathematics II (Group Theory, Linear Algebra) & 9 \\ \hline
+% Artificial Intelligence & 9 \\ \hline
+% Statistical Methods in Artificial Intelligence &  \\ \hline
+
+% %----------------------------------------------------------------------------------------
+% %	SKILLS
+% %----------------------------------------------------------------------------------------
+%
+
+% \vfill
+% \center{\footnotesize Last updated: \today}
+\end{document}
+
