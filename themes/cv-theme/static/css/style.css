@@ -7,27 +7,30 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: #fff;
+    color: #EEEEEE;
+    background: #303841;
     padding: 20px;
 }
 
 main {
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
+    background: #3A4750;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cv header {
     text-align: center;
     margin-bottom: 2em;
     padding-bottom: 1em;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #F6C90E;
 }
 
 .cv h1 {
     font-size: 2.5em;
     margin-bottom: 0.3em;
+    color: #EEEEEE;
 }
 
 .cv h2 {
@@ -35,13 +38,15 @@ main {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid #666;
+    border-bottom: 2px solid #F6C90E;
+    color: #EEEEEE;
 }
 
 .cv h3 {
     font-size: 1.3em;
     margin-top: 1em;
     margin-bottom: 0;
+    color: #EEEEEE;
 }
 
 /* For non-experience items, use float layout */
@@ -85,7 +90,8 @@ main {
 
 .experience-item > p:first-of-type strong {
     font-weight: 400;
-    color: #666;
+    color: #EEEEEE;
+    opacity: 0.8;
     font-size: 0.9em;
 }
 
@@ -116,11 +122,13 @@ main {
 }
 
 .cv a {
-    color: #0066cc;
+    color: #F6C90E;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .cv a:hover {
+    color: #EEEEEE;
     text-decoration: underline;
 }
 
@@ -136,11 +144,15 @@ main {
 .experience-filters {
     float: right;
     padding: 0.6em 1em;
-    background: #f5f5f5;
+    background: #303841;
     border-radius: 4px;
     display: flex;
     gap: 1.5em;
     margin-left: 1em;
+}
+
+.experience-filters label {
+    color: #EEEEEE;
 }
 
 .experience-filters label {
@@ -166,12 +178,12 @@ main {
 }
 
 .cv h2.collapsible:hover {
-    color: #0066cc;
+    color: #F6C90E;
 }
 
 .cv h2.collapsible .toggle-indicator {
     font-size: 0.7em;
-    color: #666;
+    color: #F6C90E;
     margin-left: 0.5em;
 }
 
