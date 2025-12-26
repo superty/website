@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: "Adwaita Sans", "Cantarell", -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: #e8e0d8;
     background: #1a1412;
@@ -33,7 +33,7 @@ main {
     background: #241c18;
     border: 1px solid #2e2420;
     border-radius: 8px;
-    padding: 1.5em;
+    padding: 1em 1.5em 0.5em 1.5em;
     margin-bottom: 1.5em;
 }
 
@@ -120,6 +120,29 @@ main {
 
 .cv li {
     margin-bottom: 0.5em;
+}
+
+/* Publications with divider lines */
+.publications p {
+    padding: 1em 0;
+    border-top: 1px solid #4a3f38;
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.publications p:last-child {
+    padding-bottom: 0;
+}
+
+.publications .me {
+    color: #d4a054;
+}
+
+.publications .award {
+    font-weight: 600;
+    color: #d4a054;
 }
 
 .cv a {

@@ -1,60 +1,82 @@
 document.addEventListener('DOMContentLoaded', function() {
     const fontChooser = document.getElementById('font-chooser');
+    const bodyFontChooser = document.getElementById('body-font-chooser');
 
     if (!fontChooser) return;
 
-    // Font definitions - warm, sophisticated fonts to match Dark Autumn palette
-    const fonts = {
-        'system': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-        'adwaita': '"Adwaita Sans", "Cantarell", sans-serif',
+    // Clean up old settings
+    localStorage.removeItem('selectedFont');
+
+    // Serif fonts for headings
+    const headingFonts = {
+        'bitter': '"Bitter", Georgia, serif',
         'lora': '"Lora", Georgia, serif',
-        'eb-garamond': '"EB Garamond", "Garamond", Georgia, serif',
-        'crimson': '"Crimson Pro", Georgia, serif',
-        'libre-baskerville': '"Libre Baskerville", Baskerville, Georgia, serif',
-        'cormorant': '"Cormorant Garamond", Garamond, Georgia, serif',
-        'fira-sans': '"Fira Sans", -apple-system, sans-serif',
-        'mono': '"JetBrains Mono", "SF Mono", "Consolas", monospace'
+        'literata': '"Literata", Georgia, serif'
+    };
+
+    // Sans-serif fonts for body
+    const bodyFonts = {
+        'adwaita': '"Adwaita Sans", "Cantarell", -apple-system, sans-serif',
+        'nunito': '"Nunito", -apple-system, sans-serif'
     };
 
     // Google Fonts to load
     const googleFonts = {
-        'lora': 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap',
-        'eb-garamond': 'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap',
-        'crimson': 'https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap',
-        'libre-baskerville': 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap',
-        'cormorant': 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap',
-        'fira-sans': 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap',
-        'mono': 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap'
+        'bitter': 'https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&display=swap',
+        'lora': 'https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap',
+        'literata': 'https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap',
+        'nunito': 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap'
     };
 
-    // Load saved font preference
-    const savedFont = localStorage.getItem('selectedFont') || 'system';
-    fontChooser.value = savedFont;
-    applyFont(savedFont);
+    // Load saved heading font preference
+    const savedHeadingFont = localStorage.getItem('headingFont') || 'bitter';
+    fontChooser.value = savedHeadingFont;
+    applyHeadingFont(savedHeadingFont);
 
-    // Handle font changes
+    // Load saved body font preference
+    const savedBodyFont = localStorage.getItem('bodyFont') || 'adwaita';
+    if (bodyFontChooser) {
+        bodyFontChooser.value = savedBodyFont;
+        applyBodyFont(savedBodyFont);
+    }
+
+    // Handle heading font changes
     fontChooser.addEventListener('change', function() {
         const selectedFont = this.value;
-        applyFont(selectedFont);
-        localStorage.setItem('selectedFont', selectedFont);
+        applyHeadingFont(selectedFont);
+        localStorage.setItem('headingFont', selectedFont);
     });
 
-    function applyFont(fontKey) {
-        // Load Google Font if needed
+    // Handle body font changes
+    if (bodyFontChooser) {
+        bodyFontChooser.addEventListener('change', function() {
+            const selectedFont = this.value;
+            applyBodyFont(selectedFont);
+            localStorage.setItem('bodyFont', selectedFont);
+        });
+    }
+
+    function applyHeadingFont(fontKey) {
         if (googleFonts[fontKey]) {
             loadGoogleFont(fontKey, googleFonts[fontKey]);
         }
+        const headings = document.querySelectorAll('.cv h1, .cv h2');
+        headings.forEach(h => {
+            h.style.fontFamily = headingFonts[fontKey];
+        });
+    }
 
-        // Apply font
-        document.body.style.fontFamily = fonts[fontKey];
+    function applyBodyFont(fontKey) {
+        if (googleFonts[fontKey]) {
+            loadGoogleFont(fontKey, googleFonts[fontKey]);
+        }
+        document.body.style.fontFamily = bodyFonts[fontKey];
     }
 
     function loadGoogleFont(fontKey, url) {
-        // Check if already loaded
         const existingLink = document.querySelector(`link[data-font="${fontKey}"]`);
         if (existingLink) return;
 
-        // Load the font
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = url;
