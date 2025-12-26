@@ -1,12 +1,8 @@
 ---
-title: "Arjun Pitchanathan"
+title: "Curriculum Vitae"
 date: 2025-12-23
 draft: false
 ---
-
-**Email:** [arjunpitchanathan@gmail.com](mailto:arjunpitchanathan@gmail.com)
-**Work Authorization:** UK (Global Talent Visa)
-
 ## Professional Summary
 
 Experience in **low-level performance engineering, compilers, and algorithms** across the stack:
