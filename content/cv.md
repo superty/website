@@ -3,11 +3,29 @@ title: "Curriculum Vitae"
 date: 2025-12-23
 draft: false
 ---
+
+<div class="font-selector">
+  <label for="font-chooser">Font:</label>
+  <select id="font-chooser">
+    <option value="system">System Default</option>
+    <option value="adwaita">Adwaita Sans</option>
+    <option value="lora">Lora</option>
+    <option value="eb-garamond">EB Garamond</option>
+    <option value="crimson">Crimson Pro</option>
+    <option value="libre-baskerville">Libre Baskerville</option>
+    <option value="cormorant">Cormorant Garamond</option>
+    <option value="fira-sans">Fira Sans</option>
+    <option value="mono">JetBrains Mono</option>
+  </select>
+</div>
+
+<div class="cv-section">
+
 ## Professional Summary
 
-Experience in **low-level performance engineering, compilers, and algorithms** across the stack:
+Experience in **performance engineering and algorithms** across the stack:
 
-- implemented and maintain the integer linear programming (ILP) solver in MLIR [[code]](https://github.com/llvm/llvm-project/blob/main/mlir/lib/Analysis/Presburger/Simplex.cpp#L1996)
+- implemented and maintain the integer linear programming (ILP) solver in MLIR [[code sample]](https://github.com/llvm/llvm-project/blob/main/mlir/lib/Analysis/Presburger/Simplex.cpp#L1996) [[library]](https://github.com/llvm/llvm-project/tree/main/mlir/lib/Analysis/Presburger)
 - optimized an ILP solver for compiler workloads using C++ templates & AVX-512 vector intrinsics to achieve a **3.6x speedup over SOTA** [[Distinguished Paper at OOPSLA]](https://2021.splashcon.org/details/splash-2021-oopsla/66/FPL-Fast-Presburger-Arithmetic-through-Transprecision)
 - research on **cache hierarchy miss rate prediction** [[paper at PLDI]](https://dl.acm.org/doi/10.1145/3656452)
 - designed **asymptotically better ILP algorithms** for our compiler use-case [[paper at CAV]](https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14)
@@ -15,6 +33,10 @@ Experience in **low-level performance engineering, compilers, and algorithms** a
 - benchmarking with [PMCs](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/programmer-references/58550-0.01.pdf), minimizing noise from frequency scaling, SMT, context switches, ...
 
 Strong math background evidenced by experience in theoretical research.
+
+</div>
+
+<div class="cv-section">
 
 ## Open-Source Projects
 
@@ -24,6 +46,10 @@ Strong math background evidenced by experience in theoretical research.
 - Lead maintainer of the Presburger library of the LLVM/MLIR open-source compiler framework
 - Reviewed 99 pull requests and worked with a team of up to four other contributors
 - Added support for multiprecision integers to LLVM based on APInt & optimized it for our workload
+
+</div>
+
+<div class="cv-section">
 
 ## Experience <div class="experience-filters"><label><input type="checkbox" class="tag-filter" value="systems" checked> Systems</label><label><input type="checkbox" class="tag-filter" value="ai-safety" checked> AI Safety</label><label><input type="checkbox" class="tag-filter" value="theory" checked> Theory</label></div>
 
@@ -90,6 +116,10 @@ Worked on hypergraph theory and communication complexity.
 
 </div>
 
+</div>
+
+<div class="cv-section">
+
 ## Education
 
 **2024 — present:** Visiting PGR Student at the **University of Cambridge** (Advisor: Tobias Grosser)
@@ -100,6 +130,10 @@ Worked on hypergraph theory and communication complexity.
 
 **2015 — 2021:** Bachelor's and MS in Computer Science and Engineering at **IIIT Hyderabad**
 
+</div>
+
+<div class="cv-section">
+
 ## Skills
 
 Compilers, performance engineering, benchmarking, theoretical computer science, algorithms.
@@ -108,12 +142,20 @@ C++, Python, shell scripting (daily use). x86-64 assembly, LLVM IR (mostly readi
 
 Familiarity with GPU architecture (programming massively parallel processors book).
 
+</div>
+
+<div class="cv-section">
+
 ## Achievements
 
 **Bronze Medal at the International Olympiad in Informatics (IOI) '15.**
 
 **International Collegiate Programming Competition (ICPC) World Finalist '20.**
 My team (tesla\_protocol) competed at the World Finals and [placed 46th internationally](https://pc2.ecs.baylor.edu/scoreboard/).
+
+</div>
+
+<div class="cv-section">
 
 ## Publications
 
@@ -132,6 +174,10 @@ Arjun Pitchanathan, Christian Ulmann, Michel Weber, Torsten Hoefler, Tobias Gros
 **Fast Linear Programming through Transprecision Computing on Small and Sparse Data.**
 Tobias Grosser, Theodoros Theodoridis, Maximilian Falkenstein, Arjun Pitchanathan, Michael Kruse, Manuel Rigger, Zhendong Su, and Torsten Hoefler.
 [Published at OOPSLA 2020.](https://doi.org/10.1145/3428263)
+
+</div>
+
+<div class="cv-section">
 
 ## Other Research
 
@@ -152,6 +198,10 @@ Arjun Pitchanathan and Saswata Shannigrahi. [Manuscript.](https://arxiv.org/abs/
 Tushant Jha, Arjun Pitchanathan, and Kannan Srinathan.
 [Manuscript.](https://github.com/Superty/dtcompress/blob/master/dtcompress_draft.pdf)
 
+</div>
+
+<div class="cv-section">
+
 ## Talks
 
 I have given talks at:
@@ -163,6 +213,10 @@ I have given talks at:
 - the EuroLLVM Developer's Meeting in 2022 and 2024
 - the LLVM Developer's Meeting in 2021, 2022 (MLIR summit), and 2024
 
+</div>
+
+<div class="cv-section">
+
 ## Professional Service
 
 **Reviewer** for **ACM Transactions on Architecture and Code Optimization**
@@ -172,6 +226,10 @@ the 13th International Workshop on Polyhedral Compilation Techniques.
 
 **Artifact Evaluation Committee Member** for **CC '24**,
 the ACM SIGPLAN 33rd International Conference on Compiler Construction.
+
+</div>
+
+<div class="cv-section">
 
 ## Teaching
 
@@ -184,6 +242,10 @@ Served as a TA for the cryptography and algorithms courses.
 **2016, 2018**
 
 Part of the team that took classes, prepared problems and test data, and evaluated students' solutions at the International Olympiad in Informatics Training Camp (IOITC), which is held to select a team to represent India at the International Olympiad in Informatics (IOI).
+
+</div>
+
+<div class="cv-section">
 
 ## Undergraduate Activities
 
@@ -203,3 +265,5 @@ Had the opportunity to get some hands-on experience in system administration by 
 - Copy-edited all the articles in the Monsoon 2017 issue
 - shepherded some articles through the writing process
 - co-authored an article saying we will need UBI once AI automates work
+
+</div>

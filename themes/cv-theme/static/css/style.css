@@ -7,8 +7,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: #BFBDB6;
-    background: #10141C;
+    color: #e8e0d8;
+    background: #1a1412;
     padding: 20px;
 }
 
@@ -16,37 +16,39 @@ main {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px;
-    background: #161A24;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cv header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2em;
-    padding-bottom: 1em;
-    border-bottom: 2px solid #E6B450;
 }
 
 .cv h1 {
     font-size: 2.5em;
     margin-bottom: 0.3em;
-    color: #BFBDB6;
+    color: #d4a054;
+}
+
+.cv-section {
+    background: #241c18;
+    border: 1px solid #2e2420;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .cv h2 {
     font-size: 1.8em;
-    margin-top: 1.5em;
+    margin-top: 0;
     margin-bottom: 0.5em;
-    padding-bottom: 0.3em;
-    border-bottom: 2px solid #E6B450;
-    color: #BFBDB6;
+    color: #d4a054;
 }
 
 .cv h3 {
     font-size: 1.3em;
     margin-top: 1em;
     margin-bottom: 0;
-    color: #BFBDB6;
+    color: #e8e0d8;
 }
 
 /* For non-experience items, use float layout */
@@ -90,8 +92,7 @@ main {
 
 .experience-item > p:first-of-type strong {
     font-weight: 400;
-    color: #BFBDB6;
-    opacity: 0.8;
+    color: #a89888;
     font-size: 0.9em;
 }
 
@@ -122,13 +123,13 @@ main {
 }
 
 .cv a {
-    color: #E6B450;
+    color: #c45c3a;
     text-decoration: none;
     font-weight: 500;
 }
 
 .cv a:hover {
-    color: #BFBDB6;
+    color: #d4a054;
     text-decoration: underline;
 }
 
@@ -140,11 +141,46 @@ main {
     font-style: italic;
 }
 
+/* Font selector */
+.font-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background: #241c18;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    border: 1px solid #2e2420;
+}
+
+.font-selector label {
+    font-size: 0.85em;
+    color: #a89888;
+}
+
+.font-selector select {
+    background: #1a1412;
+    color: #e8e0d8;
+    border: 1px solid #2e2420;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.font-selector select:focus {
+    outline: none;
+    border-color: #c45c3a;
+}
+
 /* Experience filters */
 .experience-filters {
     float: right;
     padding: 0.6em 1em;
-    background: #10141C;
+    background: #1a1412;
+    border: 1px solid #2e2420;
     border-radius: 4px;
     display: flex;
     gap: 1.5em;
@@ -152,7 +188,7 @@ main {
 }
 
 .experience-filters label {
-    color: #BFBDB6;
+    color: #e8e0d8;
 }
 
 .experience-filters label {
@@ -178,12 +214,12 @@ main {
 }
 
 .cv h2.collapsible:hover {
-    color: #E6B450;
+    color: #d4a054;
 }
 
 .cv h2.collapsible .toggle-indicator {
     font-size: 0.7em;
-    color: #E6B450;
+    color: #d4a054;
     margin-left: 0.5em;
 }
 
