@@ -140,24 +140,24 @@ Worked on hypergraph theory and communication complexity.
 Strided Difference Bound Matrices.
 [CAV 2024.](https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14)
 <br>
-<span class="me">Arjun Pitchanathan</span>, Albert Cohen, Oleksandr Zinenko, Tobias Grosser.
+*<span class="me">Arjun&nbsp;Pitchanathan</span>, Albert&nbsp;Cohen, Oleksandr&nbsp;Zinenko, Tobias&nbsp;Grosser.*
 
 Falcon: A Scalable Analytical Cache Model.
 [PLDI 2024.](https://dl.acm.org/doi/10.1145/3656452)
 <br>
-<span class="me">Arjun Pitchanathan</span>, Kunwar Grover, Tobias Grosser.
+*<span class="me">Arjun&nbsp;Pitchanathan</span>, Kunwar&nbsp;Grover, Tobias&nbsp;Grosser.*
 
 FPL: Fast Presburger Arithmetic through Transprecision.
 [OOPSLA 2021.](https://doi.org/10.1145/3485539)
 <span class="award">Distinguished Paper Award.</span>
 <br>
-<span class="me">Arjun Pitchanathan</span>, Christian Ulmann, Michel Weber, Torsten Hoefler, Tobias Grosser.
+*<span class="me">Arjun&nbsp;Pitchanathan</span>, Christian&nbsp;Ulmann, Michel&nbsp;Weber, Torsten&nbsp;Hoefler, Tobias&nbsp;Grosser.*
 
 Fast Linear Programming through Transprecision Computing on Small and Sparse Data.
 [OOPSLA 2020.](https://doi.org/10.1145/3428263)
 <br>
 <span class="award">[HiPEAC Tech Transfer Award.](https://www.hipeac.net/news/6975/announcing-winners-hipeac-tech-transfer-awards-2021/)</span>
-Tobias Grosser, Theodoros Theodoridis, Maximilian Falkenstein, <span class="me">Arjun Pitchanathan</span>, Michael Kruse, Manuel Rigger, Zhendong Su, Torsten Hoefler.
+*Tobias&nbsp;Grosser, Theodoros&nbsp;Theodoridis, Maximilian&nbsp;Falkenstein, <span class="me">Arjun&nbsp;Pitchanathan</span>, Michael&nbsp;Kruse, Manuel&nbsp;Rigger, Zhendong&nbsp;Su, Torsten&nbsp;Hoefler.*
  
 
 </div>
@@ -166,30 +166,30 @@ Tobias Grosser, Theodoros Theodoridis, Maximilian Falkenstein, <span class="me">
 
 ## Other Research
 
-*Provably Efficient LRU Cache Modeling.*
+Provably Efficient LRU Cache Modeling.
 Under preparation.
 <br>
-Arjun Pitchanathan and Tobias Grosser.
+*<span class="me">Arjun&nbsp;Pitchanathan</span> and Tobias&nbsp;Grosser.*
 
-*Compositional Polytope MDPs.*
+Compositional Polytope MDPs.
 Under preparation.
 <br>
-Arjun Pitchanathan and Vanessa Kosoy.
+*<span class="me">Arjun&nbsp;Pitchanathan</span> and Vanessa&nbsp;Kosoy.*
 
-*On the Simple Quasi Crossing Number of K₁₁.*
+On the Simple Quasi Crossing Number of K₁₁.
 [GD 2019 (poster with extended abstract).](https://link.springer.com/content/pdf/bbm:978-3-030-35802-0/1)
 <br>
-Arjun Pitchanathan and Saswata Shannigrahi.
+*Arjun&nbsp;Pitchanathan and Saswata&nbsp;Shannigrahi.*
 
-*Improved Encoding and Counting of Uniform Hypertrees.*
+Improved Encoding and Counting of Uniform Hypertrees.
 [Manuscript.](https://arxiv.org/abs/1711.03335v4)
 <br>
-Arjun Pitchanathan and Saswata Shannigrahi. 
+*Arjun&nbsp;Pitchanathan and Saswata&nbsp;Shannigrahi.*
 
-*Decision-Theoretic Compression and Value-Aware Measures of Information and Noise.*
+Decision-Theoretic Compression and Value-Aware Measures of Information and Noise.
 [Manuscript.](https://github.com/Superty/dtcompress/blob/master/dtcompress_draft.pdf)
 <br>
-Tushant Jha, Arjun Pitchanathan, and Kannan Srinathan.
+*Tushant&nbsp;Jha, <span class="me">Arjun&nbsp;Pitchanathan</span>, and Kannan&nbsp;Srinathan.*
 
 </div>
 
