@@ -33,7 +33,7 @@ main {
     background: #241c18;
     border: 1px solid #2e2420;
     border-radius: 8px;
-    padding: 1em 1.5em 0.5em 1.5em;
+    padding: 1em 1.5em 1em 1.5em;
     margin-bottom: 1.5em;
 }
 
@@ -122,25 +122,27 @@ main {
     margin-bottom: 0.5em;
 }
 
-/* Publications with divider lines */
-.publications p {
-    padding: 1em 0;
+/* Sections with divider lines */
+.divided p {
+    padding: 1em 1.5em;
+    margin: 0 -1.5em;
     border-top: 1px solid #4a3f38;
-    margin-left: -1.5em;
-    margin-right: -1.5em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
 }
 
-.publications p:last-child {
+.divided p:last-child {
     padding-bottom: 0;
+    margin-bottom: 0;
 }
 
-.publications .me {
+.accent {
     color: #d4a054;
 }
 
-.publications .award {
+.me {
+    color: #d4a054;
+}
+
+.award {
     font-weight: 600;
     color: #d4a054;
 }
@@ -232,6 +234,7 @@ main {
 
 /* Collapsible sections */
 .cv h2.collapsible {
+    margin-bottom: 0em;
     user-select: none;
     transition: color 0.2s ease;
 }
@@ -248,14 +251,39 @@ main {
 
 .collapsible-content {
     max-height: 5000px;
+    margin-top: 0.5em;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease;
     opacity: 1;
 }
 
+.divided .collapsible-content {
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
 .collapsible-content.collapsed {
     max-height: 0;
     opacity: 0;
+}
+
+.cv-footer {
+    text-align: center;
+    padding: 2em 0 1em;
+    color: #a89888;
+    font-size: 0.9em;
+}
+
+.cv-footer a {
+    color: #c45c3a;
+    text-decoration: none;
+}
+
+.cv-footer a:hover {
+    color: #d4a054;
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {

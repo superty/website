@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sans-serif fonts for body
     const bodyFonts = {
-        'adwaita': '"Adwaita Sans", "Cantarell", -apple-system, sans-serif',
-        'nunito': '"Nunito", -apple-system, sans-serif'
+        'adwaita': { family: '"Adwaita Sans", "Cantarell", -apple-system, sans-serif', weight: 400, size: '0.95em' },
+        'nunito': { family: '"Nunito", -apple-system, sans-serif', weight: 400, size: null },
+        'be-vietnam-pro': { family: '"Be Vietnam Pro", -apple-system, sans-serif', weight: 300, size: '0.95em' }
     };
 
     // Google Fonts to load
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'bitter': 'https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&display=swap',
         'lora': 'https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap',
         'literata': 'https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600;700&display=swap',
-        'nunito': 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap'
+        'nunito': 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap',
+        'be-vietnam-pro': 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap'
     };
 
     // Load saved heading font preference
@@ -70,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (googleFonts[fontKey]) {
             loadGoogleFont(fontKey, googleFonts[fontKey]);
         }
-        document.body.style.fontFamily = bodyFonts[fontKey];
+        document.body.style.fontFamily = bodyFonts[fontKey].family;
+        document.body.style.fontWeight = bodyFonts[fontKey].weight;
+        document.body.style.fontSize = bodyFonts[fontKey].size || '';
     }
 
     function loadGoogleFont(fontKey, url) {

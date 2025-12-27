@@ -15,6 +15,7 @@ draft: false
   <select id="body-font-chooser">
     <option value="adwaita">Adwaita Sans</option>
     <option value="nunito">Nunito</option>
+    <option value="be-vietnam-pro">Be Vietnam Pro</option>
   </select>
 </div>
 
@@ -34,18 +35,6 @@ Experience in **performance engineering and algorithms** across the stack:
 Strong math background evidenced by experience in theoretical research.
 
 </div>
-
-<div class="cv-section">
-
-## MLIR Presburger Library
-[[Commits]](https://github.com/llvm/llvm-project/commits/main?author=superty) [[Reviewing]](https://github.com/search?q=repo\%3Allvm\%2Fllvm-project+\%22Reviewed+By\%3A+arjunp\%22\&type=commits\&p=1) [[More Reviewing]](https://github.com/llvm/llvm-project/pulls?q=is\%3Apr+reviewed-by\%3Asuperty+) [[Website]](https://grosser.science/FPL)
-
-- Lead maintainer of the Presburger library of the LLVM/MLIR open-source compiler framework
-- Reviewed 100+ pull requests and worked with a team of up to four other contributors
-- Added support for multiprecision integers to LLVM based on APInt & optimized it for our workload
-
-</div>
-
 <div class="cv-section">
 
 ## Experience <div class="experience-filters"><label><input type="checkbox" class="tag-filter" value="systems" checked> Systems</label><label><input type="checkbox" class="tag-filter" value="ai-safety" checked> AI Safety</label><label><input type="checkbox" class="tag-filter" value="theory" checked> Theory</label></div>
@@ -59,6 +48,22 @@ Worked on static analysis for tiled linear algebraic kernels. I developed asympt
 
 </div>
 
+
+<div class="experience-item" data-tags="systems">
+
+### Lead Maintainer of the MLIR Presburger Library
+**2020 — Present**
+
+[[commits]](https://github.com/llvm/llvm-project/commits/main?author=superty) [[reviews]](https://github.com/search?q=repo\%3Allvm\%2Fllvm-project+\%22Reviewed+By\%3A+arjunp\%22\&type=commits\&p=1) [[older reviews]](https://github.com/llvm/llvm-project/pulls?q=is\%3Apr+reviewed-by\%3Asuperty+) [[website]](https://grosser.science/FPL)
+
+- Lead maintainer of the Presburger library of the LLVM/MLIR open-source compiler framework
+- Reviewed 100+ pull requests and worked with a team of up to four other contributors
+- Added support for multiprecision integers to LLVM based on APInt & optimized it for our workload
+
+</div>
+
+
+
 <div class="experience-item" data-tags="systems">
 
 ### Research Intern at ETH Zürich
@@ -70,7 +75,7 @@ Wrote the MLIR Presburger library (see above) and worked on papers published at 
 
 <div class="experience-item" data-tags="theory">
 
-### Research Intern at Tata Institute of Fundamental Research, Mumbai
+### Research Intern at TIFR, Mumbai
 **May — July 2018**
 
 Studied approximation algorithms and hardness of approximation (via probabilistically checkable proofs).
@@ -97,7 +102,7 @@ Worked with a team of math/theoretical CS PhDs. In two weeks, I found a countere
 
 <div class="experience-item" data-tags="ai-safety,theory">
 
-### Research Scholar at the ML Alignment & Theory Scholars Program
+### Research Scholar at the MATS Program
 **February — May 2024**
 
 Worked on Markov decision process theory.
@@ -117,6 +122,79 @@ Worked on hypergraph theory and communication complexity.
 
 <div class="cv-section">
 
+## Achievements
+
+[Bronze Medal](https://stats.ioinformatics.org/people/5608) at the **International Olympiad in Informatics (IOI) 2015.**
+
+[World Finalist](https://cphof.org/profile/icpc:Arjun%20Pitchanathan) at the **International Collegiate Programming Competition (ICPC) 2020.**
+
+<!-- Member of the team representing IIIT Hyderabad; we qualified for and [competed at the ICPC World Finals](https://icpc.global/community/results-2020). -->
+
+</div>
+
+<div class="cv-section divided collapsible">
+
+## Publications
+
+
+Strided Difference Bound Matrices.
+[CAV 2024.](https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14)
+<br>
+<span class="me">Arjun Pitchanathan</span>, Albert Cohen, Oleksandr Zinenko, Tobias Grosser.
+
+Falcon: A Scalable Analytical Cache Model.
+[PLDI 2024.](https://dl.acm.org/doi/10.1145/3656452)
+<br>
+<span class="me">Arjun Pitchanathan</span>, Kunwar Grover, Tobias Grosser.
+
+FPL: Fast Presburger Arithmetic through Transprecision.
+[OOPSLA 2021.](https://doi.org/10.1145/3485539)
+<span class="award">Distinguished Paper Award.</span>
+<br>
+<span class="me">Arjun Pitchanathan</span>, Christian Ulmann, Michel Weber, Torsten Hoefler, Tobias Grosser.
+
+Fast Linear Programming through Transprecision Computing on Small and Sparse Data.
+[OOPSLA 2020.](https://doi.org/10.1145/3428263)
+<br>
+<span class="award">[HiPEAC Tech Transfer Award.](https://www.hipeac.net/news/6975/announcing-winners-hipeac-tech-transfer-awards-2021/)</span>
+Tobias Grosser, Theodoros Theodoridis, Maximilian Falkenstein, <span class="me">Arjun Pitchanathan</span>, Michael Kruse, Manuel Rigger, Zhendong Su, Torsten Hoefler.
+ 
+
+</div>
+
+<div class="cv-section divided collapsible collapsed">
+
+## Other Research
+
+*Provably Efficient LRU Cache Modeling.*
+Under preparation.
+<br>
+Arjun Pitchanathan and Tobias Grosser.
+
+*Compositional Polytope MDPs.*
+Under preparation.
+<br>
+Arjun Pitchanathan and Vanessa Kosoy.
+
+*On the Simple Quasi Crossing Number of K₁₁.*
+[GD 2019 (poster with extended abstract).](https://link.springer.com/content/pdf/bbm:978-3-030-35802-0/1)
+<br>
+Arjun Pitchanathan and Saswata Shannigrahi.
+
+*Improved Encoding and Counting of Uniform Hypertrees.*
+[Manuscript.](https://arxiv.org/abs/1711.03335v4)
+<br>
+Arjun Pitchanathan and Saswata Shannigrahi. 
+
+*Decision-Theoretic Compression and Value-Aware Measures of Information and Noise.*
+[Manuscript.](https://github.com/Superty/dtcompress/blob/master/dtcompress_draft.pdf)
+<br>
+Tushant Jha, Arjun Pitchanathan, and Kannan Srinathan.
+
+</div>
+
+<div class="cv-section">
+
 ## Education
 
 **2024 — present:** Visiting PGR Student at the **University of Cambridge** (Advisor: Tobias Grosser)<br>
@@ -125,100 +203,34 @@ Thesis title: Efficient Static Analysis for Neural Networks
 
 *I did the second half of my PhD in Cambridge, as my advisor moved there.*
 
-**2015 — 2021:** Bachelor's and MS in Computer Science and Engineering at **IIIT Hyderabad**
+**2015 — 2021:** BTech and MS in Computer Science and Engineering at **IIIT Hyderabad**
 
 </div>
 
 <div class="cv-section">
 
-## Skills
+## Programming Languages
 
-Performance engineering, benchmarking, compilers, theoretical computer science, algorithms.
+<!-- Performance engineering, benchmarking, compilers, theoretical computer science, algorithms. -->
 
-C++, Python, shell scripting (daily use). x86-64 assembly, LLVM IR (mostly reading, some writing).
-
-</div>
-
-<div class="cv-section">
-
-## Achievements
-
-[Bronze Medal](https://stats.ioinformatics.org/people/5608) at the **International Olympiad in Informatics (IOI) 2015.**
-
-World Finalist at the **International Collegiate Programming Competition (ICPC) 2020.**
-
-<!-- Member of the team representing IIIT Hyderabad; we qualified for and [competed at the ICPC World Finals](https://icpc.global/community/results-2020). -->
+C++, Python, Bash, English (regular use). x86-64 assembly, LLVM IR (mostly reading).
 
 </div>
 
-<div class="cv-section publications">
 
-## Publications
-
-
-*Strided Difference Bound Matrices.*
-[CAV 2024.](https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14)
-<br>
-<span class="me">Arjun Pitchanathan</span>, Albert Cohen, Oleksandr Zinenko, Tobias Grosser.
-
-*Falcon: A Scalable Analytical Cache Model.*
-[PLDI 2024.](https://dl.acm.org/doi/10.1145/3656452)
-<br>
-<span class="me">Arjun Pitchanathan</span>, Kunwar Shaanjeet Singh Grover, Tobias Grosser.
-
-*FPL: Fast Presburger Arithmetic through Transprecision.*
-[OOPSLA 2021.](https://doi.org/10.1145/3485539)
-<span class="award">Distinguished Paper Award.</span>
-<br>
-<span class="me">Arjun Pitchanathan</span>, Christian Ulmann, Michel Weber, Torsten Hoefler, Tobias Grosser.
-
-*Fast Linear Programming through Transprecision Computing on Small and Sparse Data.*
-<br>
-[OOPSLA 2020.](https://doi.org/10.1145/3428263) <span class="award">[HiPEAC Tech Transfer Award.](https://www.hipeac.net/news/6975/announcing-winners-hipeac-tech-transfer-awards-2021/)</span>
-Tobias Grosser, Theodoros Theodoridis, Maximilian Falkenstein, <span class="me">Arjun Pitchanathan</span>, Michael Kruse, Manuel Rigger, Zhendong Su, Torsten Hoefler.
- 
-
-</div>
-
-<div class="cv-section">
-
-## Other Research
-
-**Provably Efficient LRU Cache Modeling.**
-Arjun Pitchanathan and Tobias Grosser. *Under preparation.*
-
-**Compositional Polytope MDPs.**
-Vanessa Kosoy and Arjun Pitchanathan. *Under preparation.*
-
-**On the Simple Quasi Crossing Number of K₁₁.**
-Arjun Pitchanathan and Saswata Shannigrahi.
-Symposium on Graph Drawing and Network Visualization (GD), 2019. Poster with [extended abstract](https://arxiv.org/abs/1908.07851).
-
-**Improved Encoding and Counting of Uniform Hypertrees.**
-Arjun Pitchanathan and Saswata Shannigrahi. [Manuscript.](https://arxiv.org/abs/1711.03335v4)
-
-**Decision-Theoretic Compression and Value-Aware Measures of Information and Noise.**
-Tushant Jha, Arjun Pitchanathan, and Kannan Srinathan.
-[Manuscript.](https://github.com/Superty/dtcompress/blob/master/dtcompress_draft.pdf)
-
-</div>
-
-<div class="cv-section">
+<div class="cv-section collapsible collapsed">
 
 ## Talks
 
 I have given talks at:
 
-- the OOPSLA 2021 systems conference [[online version of the talk]](https://www.youtube.com/watch?v=UibEvel177w)
-- the Programming Language Design and Implementation (PLDI) conference in 2022 and [2024](https://www.youtube.com/watch?v=ALOvruhw8sI)
-- the Compilers for Machine Learning (C4ML) workshop at CGO 2021
-- the International Workshop on Polyhedral Compilation Techniques at HiPEAC 2022
-- the EuroLLVM Developer's Meeting in 2022 and 2024
-- the LLVM Developer's Meeting in 2021, 2022 (MLIR summit), and 2024
-
+- academic conferences: OOPSLA 2021 [[online version]](https://www.youtube.com/watch?v=UibEvel177w), PLDI 2022, [PLDI 2024](https://www.youtube.com/watch?v=ALOvruhw8sI)
+- the Compilers for Machine Learning (C4ML) workshop at CGO 2024
+- the Polyhedral Compilation Workshop (IMPACT) at HiPEAC 2022
+- LLVM Developer Meetings: US 2021, Europe 2022, US 2022 (MLIR summit), Europe 2024, US 2024
 </div>
 
-<div class="cv-section">
+<div class="cv-section divided collapsible collapsed">
 
 ## Professional Service
 
@@ -232,7 +244,7 @@ the ACM SIGPLAN 33rd International Conference on Compiler Construction.
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section collapsible collapsed">
 
 ## Teaching
 
@@ -248,7 +260,7 @@ Part of the team that took classes, prepared problems and test data, and evaluat
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section collapsible collapsed">
 
 ## Undergraduate Activities
 
@@ -269,3 +281,7 @@ Had the opportunity to get some hands-on experience in system administration by 
 - shepherded some articles through the writing process
 - co-authored an article on the necessity of UBI after AGI
 </div>
+
+<footer class="cv-footer">
+Built with <a href="https://claude.ai">Claude</a> using <a href="https://gohugo.io">Hugo</a><span class="accent">.</span>
+</footer>
