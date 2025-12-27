@@ -132,59 +132,74 @@ Worked on hypergraph theory and communication complexity.
 
 </div>
 
-<div class="cv-section divided collapsible">
+<div class="cv-section collapsible">
 
 ## Publications
 
+---
 
 Strided Difference Bound Matrices.
-[CAV 2024.](https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14)
+[CAV&nbsp;2024.](https://link.springer.com/chapter/10.1007/978-3-031-65627-9_14)
 <br>
 *<span class="me">Arjun&nbsp;Pitchanathan</span>, Albert&nbsp;Cohen, Oleksandr&nbsp;Zinenko, Tobias&nbsp;Grosser.*
 
+---
+
 Falcon: A Scalable Analytical Cache Model.
-[PLDI 2024.](https://dl.acm.org/doi/10.1145/3656452)
+[PLDI&nbsp;2024.](https://dl.acm.org/doi/10.1145/3656452)
 <br>
 *<span class="me">Arjun&nbsp;Pitchanathan</span>, Kunwar&nbsp;Grover, Tobias&nbsp;Grosser.*
 
+---
+
 FPL: Fast Presburger Arithmetic through Transprecision.
-[OOPSLA 2021.](https://doi.org/10.1145/3485539)
-<span class="award">Distinguished Paper Award.</span>
+[OOPSLA&nbsp;2021.](https://doi.org/10.1145/3485539)
+<span class="award">Distinguished&nbsp;Paper&nbsp;Award.</span>
 <br>
 *<span class="me">Arjun&nbsp;Pitchanathan</span>, Christian&nbsp;Ulmann, Michel&nbsp;Weber, Torsten&nbsp;Hoefler, Tobias&nbsp;Grosser.*
 
+---
+
 Fast Linear Programming through Transprecision Computing on Small and Sparse Data.
-[OOPSLA 2020.](https://doi.org/10.1145/3428263)
-<br>
-<span class="award">[HiPEAC Tech Transfer Award.](https://www.hipeac.net/news/6975/announcing-winners-hipeac-tech-transfer-awards-2021/)</span>
+[OOPSLA&nbsp;2020.](https://doi.org/10.1145/3428263)
+<span class="award">[HiPEAC&nbsp;Tech&nbsp;Transfer&nbsp;Award.](https://www.hipeac.net/news/6975/announcing-winners-hipeac-tech-transfer-awards-2021/)</span>
 *Tobias&nbsp;Grosser, Theodoros&nbsp;Theodoridis, Maximilian&nbsp;Falkenstein, <span class="me">Arjun&nbsp;Pitchanathan</span>, Michael&nbsp;Kruse, Manuel&nbsp;Rigger, Zhendong&nbsp;Su, Torsten&nbsp;Hoefler.*
- 
 
 </div>
 
-<div class="cv-section divided collapsible collapsed">
+<div class="cv-section collapsible collapsed">
 
 ## Other Research
+
+---
 
 Provably Efficient LRU Cache Modeling.
 Under preparation.
 <br>
 *<span class="me">Arjun&nbsp;Pitchanathan</span> and Tobias&nbsp;Grosser.*
 
+---
+
 Compositional Polytope MDPs.
 Under preparation.
 <br>
 *<span class="me">Arjun&nbsp;Pitchanathan</span> and Vanessa&nbsp;Kosoy.*
 
+---
+
 On the Simple Quasi Crossing Number of K₁₁.
-[GD 2019 (poster with extended abstract).](https://link.springer.com/content/pdf/bbm:978-3-030-35802-0/1)
+[GD&nbsp;2019 (poster with extended abstract).](https://link.springer.com/content/pdf/bbm:978-3-030-35802-0/1)
 <br>
 *Arjun&nbsp;Pitchanathan and Saswata&nbsp;Shannigrahi.*
+
+---
 
 Improved Encoding and Counting of Uniform Hypertrees.
 [Manuscript.](https://arxiv.org/abs/1711.03335v4)
 <br>
 *Arjun&nbsp;Pitchanathan and Saswata&nbsp;Shannigrahi.*
+
+---
 
 Decision-Theoretic Compression and Value-Aware Measures of Information and Noise.
 [Manuscript.](https://github.com/Superty/dtcompress/blob/master/dtcompress_draft.pdf)
@@ -224,10 +239,9 @@ C++, Python, Bash, English (regular use). x86-64 assembly, LLVM IR (mostly readi
 
 I have given talks at:
 
-- academic conferences: OOPSLA 2021 [[online version]](https://www.youtube.com/watch?v=UibEvel177w), PLDI 2022, [PLDI 2024](https://www.youtube.com/watch?v=ALOvruhw8sI)
-- the Compilers for Machine Learning (C4ML) workshop at CGO 2024
-- the Polyhedral Compilation Workshop (IMPACT) at HiPEAC 2022
-- LLVM Developer Meetings: US 2021, Europe 2022, US 2022 (MLIR summit), Europe 2024, US 2024
+- academic conferences: OOPSLA '21 [[online version]](https://www.youtube.com/watch?v=UibEvel177w), PLDI '22, [PLDI '24](https://www.youtube.com/watch?v=ALOvruhw8sI)
+- the Polyhedral Compilation Workshop (IMPACT) at HiPEAC '22
+- LLVM Developer Meetings: US '21, Europe '22, US '22 (MLIR summit), Europe '24, US '24
 </div>
 
 <div class="cv-section divided collapsible collapsed">

@@ -122,16 +122,10 @@ main {
     margin-bottom: 0.5em;
 }
 
-/* Sections with divider lines */
-.divided p {
-    padding: 1em 1.5em;
-    margin: 0 -1.5em;
+.cv-section hr {
+    border: none;
     border-top: 1px solid #4a3f38;
-}
-
-.divided p:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
+    margin: 1em -1.5em;
 }
 
 .accent {
@@ -234,7 +228,7 @@ main {
 
 /* Collapsible sections */
 .cv h2.collapsible {
-    margin-bottom: 0em;
+    margin: 0;
     user-select: none;
     transition: color 0.2s ease;
 }
@@ -251,23 +245,14 @@ main {
 
 .collapsible-content {
     max-height: 5000px;
-    margin-top: 0.5em;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease;
     opacity: 1;
-}
-
-.divided .collapsible-content {
-    margin-left: -1.5em;
-    margin-right: -1.5em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    margin: 0 -1.5em;
+    padding: 0 1.5em;
 }
 
 .collapsible-content.collapsed {
-    padding: 0 1.5em;
-    /* margin-bottom: 0em */
-    /* margin: 0 -1.5em; */
     max-height: 0;
     opacity: 0;
 }
