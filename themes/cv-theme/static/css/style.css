@@ -8,7 +8,8 @@ body {
     font-family: "Adwaita Sans", "Cantarell", -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: #e8e0d8;
-    background: #1a1412;
+    background: #1a1412 url('/bg.png') no-repeat center center fixed;
+    background-size: cover;
     padding: 20px;
 }
 
@@ -274,6 +275,128 @@ main {
     text-decoration: underline;
 }
 
+/* Homepage */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+}
+
+.home-card {
+    background: #241c18;
+    border: 1px solid #2e2420;
+    border-radius: 12px;
+    padding: 2.5em;
+    display: flex;
+    gap: 2.5em;
+    align-items: center;
+    max-width: 720px;
+}
+
+.home-photo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%;
+    border: 2px solid #2e2420;
+}
+
+.home-info h1 {
+    font-size: 1.8em;
+    color: #d4a054;
+    margin-bottom: 0.4em;
+}
+
+.home-blurb {
+    color: #c8beb4;
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+}
+
+.home-blurb a {
+    color: #c45c3a;
+    text-decoration: none;
+}
+
+.home-blurb a:hover {
+    color: #d4a054;
+    text-decoration: underline;
+}
+
+.home-links {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    flex-wrap: wrap;
+}
+
+.home-links a {
+    color: #c45c3a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.home-links a:hover {
+    color: #d4a054;
+}
+
+.home-links a.emoji-link {
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.home-links a.emoji-link:hover {
+    text-decoration: none;
+}
+
+.link-sep {
+    color: #4a3f38;
+}
+
+/* Homepage font selectors */
+.home-font-selectors {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 0.8em;
+    z-index: 10;
+}
+
+.home-font-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    background: #241c18;
+    padding: 0.4em 0.8em;
+    border-radius: 6px;
+    border: 1px solid #2e2420;
+}
+
+.home-font-selector label {
+    font-size: 0.8em;
+    color: #a89888;
+}
+
+.home-font-selector select {
+    background: #1a1412;
+    color: #e8e0d8;
+    border: 1px solid #2e2420;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+.home-font-selector select:focus {
+    outline: none;
+    border-color: #c45c3a;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -289,5 +412,15 @@ main {
 
     .cv h2 {
         font-size: 1.5em;
+    }
+
+    .home-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2em 1.5em;
+    }
+
+    .home-links {
+        justify-content: center;
     }
 }

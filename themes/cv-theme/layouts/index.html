@@ -1,0 +1,150 @@
+{{ define "main" }}
+<div class="home-font-selectors">
+    <div class="home-font-selector">
+        <label>Title</label>
+        <select id="title-font-select">
+            <option value='"Bitter", serif'>Bitter Pro</option>
+            <option value='"Cantarell", sans-serif'>Cantarell</option>
+            <option value='"Google Sans Flex", sans-serif'>Google Sans Flex</option>
+            <option value='"IBM Plex Sans", sans-serif'>IBM Plex Sans</option>
+            <option value='"Instrument Sans", sans-serif'>Instrument Sans</option>
+            <option value='"Inter", sans-serif'>Inter</option>
+            <option value='"Lato", sans-serif'>Lato</option>
+            <option value='"Noto Sans", sans-serif'>Noto Sans</option>
+            <option value='"Open Sans", sans-serif'>Open Sans</option>
+            <option value='"Roboto Slab", serif'>Roboto Slab</option>
+            <option value='"Segoe UI", sans-serif'>Segoe UI</option>
+            <option value='"Source Sans 3", sans-serif'>Source Sans Variable</option>
+        </select>
+        <select id="title-weight-select">
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700" selected>700</option>
+        </select>
+    </div>
+    <div class="home-font-selector">
+        <label>Body</label>
+        <select id="body-font-select">
+            <option value='"Bitter", serif'>Bitter Pro</option>
+            <option value='"Cantarell", sans-serif'>Cantarell</option>
+            <option value='"Google Sans Flex", sans-serif'>Google Sans Flex</option>
+            <option value='"IBM Plex Sans", sans-serif'>IBM Plex Sans</option>
+            <option value='"Instrument Sans", sans-serif'>Instrument Sans</option>
+            <option value='"Inter", sans-serif'>Inter</option>
+            <option value='"Lato", sans-serif'>Lato</option>
+            <option value='"Noto Sans", sans-serif'>Noto Sans</option>
+            <option value='"Open Sans", sans-serif'>Open Sans</option>
+            <option value='"Roboto Slab", serif'>Roboto Slab</option>
+            <option value='"Segoe UI", sans-serif'>Segoe UI</option>
+            <option value='"Source Sans 3", sans-serif'>Source Sans Variable</option>
+        </select>
+        <select id="body-weight-select">
+            <option value="300">300</option>
+            <option value="400" selected>400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+        </select>
+    </div>
+</div>
+<div class="home">
+    <div class="home-card">
+        <div class="home-info">
+            <h1>Arjun Pitchanathan</h1>
+            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Previously, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains.</p>
+            <div class="home-links">
+                <a href="https://linkedin.com/in/arjunpitchanathan" target="_blank">LinkedIn</a>
+                <span class="link-sep">|</span>
+                <a href="/cv" id="website-link" data-click-count="0">Website</a>
+                <span class="link-sep">|</span>
+                <a href="https://goodreads.com/arjunpitchanathan" target="_blank">Goodreads</a>
+                <span class="link-sep">|</span>
+                <a href="https://github.com/arjunpitchanathan" target="_blank">Github</a>
+            </div>
+        </div>
+        <div class="home-photo">
+            <img src="/me.jpg" alt="Arjun Pitchanathan">
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const emojis = ['😜', '🫨', '😵‍💫'];
+    const link = document.getElementById('website-link');
+    let clickCount = 0;
+
+    var origWidth = link.offsetWidth;
+    link.style.display = 'inline-block';
+    link.style.width = origWidth + 'px';
+    link.style.textAlign = 'center';
+
+    link.addEventListener('click', function(e) {
+        if (clickCount < emojis.length) {
+            e.preventDefault();
+            link.textContent = emojis[clickCount];
+            clickCount++;
+            if (clickCount >= emojis.length) {
+                link.style.cursor = 'default';
+                link.removeAttribute('href');
+            }
+        }
+    });
+})();
+
+// Font selectors
+var titleSelect = document.getElementById('title-font-select');
+var bodySelect = document.getElementById('body-font-select');
+var titleWeight = document.getElementById('title-weight-select');
+var bodyWeight = document.getElementById('body-weight-select');
+var homeCard = document.querySelector('.home-card');
+
+var fontWeights = JSON.parse(localStorage.getItem('fontWeights') || '{}');
+
+function getWeightKey(role, font) { return role + ':' + font; }
+
+function saveWeight(role, select, weightSelect) {
+    fontWeights[getWeightKey(role, select.value)] = weightSelect.value;
+    localStorage.setItem('fontWeights', JSON.stringify(fontWeights));
+}
+
+function restoreWeight(role, select, weightSelect) {
+    var saved = fontWeights[getWeightKey(role, select.value)];
+    if (saved) { weightSelect.value = saved; }
+}
+
+var savedTitle = localStorage.getItem('homeTitleFont');
+var savedBody = localStorage.getItem('homeBodyFont');
+if (savedTitle) { titleSelect.value = savedTitle; }
+if (savedBody) { bodySelect.value = savedBody; }
+restoreWeight('title', titleSelect, titleWeight);
+restoreWeight('body', bodySelect, bodyWeight);
+
+function applyFonts() {
+    homeCard.querySelector('h1').style.fontFamily = titleSelect.value;
+    homeCard.querySelector('h1').style.fontWeight = titleWeight.value;
+    homeCard.querySelector('.home-blurb').style.fontFamily = bodySelect.value;
+    homeCard.querySelector('.home-blurb').style.fontWeight = bodyWeight.value;
+    homeCard.querySelector('.home-links').style.fontFamily = bodySelect.value;
+    homeCard.querySelector('.home-links').style.fontWeight = bodyWeight.value;
+    localStorage.setItem('homeTitleFont', titleSelect.value);
+    localStorage.setItem('homeBodyFont', bodySelect.value);
+    saveWeight('title', titleSelect, titleWeight);
+    saveWeight('body', bodySelect, bodyWeight);
+}
+applyFonts();
+
+titleSelect.addEventListener('change', function() {
+    restoreWeight('title', titleSelect, titleWeight);
+    applyFonts();
+});
+bodySelect.addEventListener('change', function() {
+    restoreWeight('body', bodySelect, bodyWeight);
+    applyFonts();
+});
+titleWeight.addEventListener('change', applyFonts);
+bodyWeight.addEventListener('change', applyFonts);
+</script>
+{{ end }}
