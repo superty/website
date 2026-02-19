@@ -113,6 +113,12 @@
     link.style.width = origWidth + 'px';
     link.style.textAlign = 'center';
 
+    // Preload emoji images
+    emojiUrls.forEach(function(url) {
+        var preload = new Image();
+        preload.src = url;
+    });
+
     link.addEventListener('click', function(e) {
         if (clickCount < emojiUrls.length) {
             e.preventDefault();
