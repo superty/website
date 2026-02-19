@@ -310,10 +310,16 @@ main {
   border-radius: 12px;
   padding: 0.9em 1.3em 1em 1.3em;
   display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  max-width: 42rem;
+  /* backdrop-filter: blur(12px); */
+}
+
+.home-card-top {
+  display: flex;
   gap: 2.5em;
   align-items: center;
-  max-width: 720px;
-  /* backdrop-filter: blur(12px); */
 }
 
 .home-photo img {
