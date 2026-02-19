@@ -117,21 +117,58 @@
         preload.src = url;
     });
 
+    function makeImg(url) {
+        var img = document.createElement('img');
+        img.src = url;
+        img.style.height = '1.2em';
+        img.style.gridArea = '1/1';
+        return img;
+    }
+
+    function setEmoji(url) {
+        while (link.firstChild) link.removeChild(link.firstChild);
+        var img = makeImg(url);
+        link.appendChild(img);
+        link.classList.add('emoji-link');
+        return img;
+    }
+
+    link.style.display = 'inline-grid';
+    link.style.placeItems = 'center';
+    link.style.verticalAlign = 'middle';
+
+    // Show ;P immediately
+    setEmoji(emojiUrls[0]);
+    link.style.cursor = 'pointer';
+
     link.addEventListener('click', function(e) {
-        if (clickCount < emojiUrls.length) {
+        if (clickCount === 0) {
             e.preventDefault();
-            link.textContent = '';
-            var img = document.createElement('img');
-            img.src = emojiUrls[clickCount];
-            img.style.height = '1.2em';
-            img.style.verticalAlign = 'middle';
-            link.appendChild(img);
-            link.classList.add('emoji-link');
-            clickCount++;
-            if (clickCount >= emojiUrls.length) {
-                link.style.cursor = 'default';
-                link.removeAttribute('href');
-            }
+            link.removeAttribute('href');
+            link.style.cursor = 'default';
+            clickCount = 1;
+
+            // Crossfade ;P out and shaken in
+            var winkImg = link.querySelector('img');
+            winkImg.style.animation = 'crossfadeOut 1s linear forwards';
+
+            var shakenImg = makeImg(emojiUrls[1]);
+            shakenImg.style.animation = 'crossfadeIn 1.5s linear forwards';
+            link.appendChild(shakenImg);
+
+            // // After crossfade, shaken spins out then spiral spins in
+            // setTimeout(function() {
+                // winkImg.remove();
+                // shakenImg.style.animation = 'spinOut 1.2s ease-in forwards';
+                // setTimeout(function() {
+                    // shakenImg.remove();
+                    // var finalImg = setEmoji(emojiUrls[2]);
+                    // finalImg.style.animation = 'spinIn 0.4s ease-out forwards';
+                    // setTimeout(function() {
+                        // finalImg.style.animation = 'rock 2s ease-in-out infinite';
+                    // }, 400);
+                // }, 1200);
+            // }, 600);
         }
     });
 })();

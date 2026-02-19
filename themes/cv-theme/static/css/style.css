@@ -378,6 +378,116 @@ main {
   color: #584838;
 }
 
+@keyframes shake {
+  0% {
+    transform: translate(-1px, -1px) rotate(-2deg);
+  }
+
+  25% {
+    transform: translate(1px, 1px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(1px, -1px) rotate(-2deg);
+  }
+}
+
+@keyframes rock {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(30deg);
+  }
+
+  75% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes crossfadeOut {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(405deg);
+    opacity: 0;
+    scale: 0.66;
+  }
+
+  100% {
+    transform: rotate(810deg);
+    opacity: 0;
+    scale: 0.33;
+  }
+}
+
+@keyframes crossfadeIn {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+    scale: 1;
+  }
+
+  5.5% {
+    transform: rotate(0deg);
+    opacity: 0;
+    scale: 1;
+  }
+
+  33.33% {
+    transform: rotate(360deg);
+    opacity: 1;
+    scale: 1;
+  }
+
+  66.66% {
+    transform: rotate(720deg);
+    opacity: 1;
+    scale: 0.5;
+  }
+
+  100% {
+    transform: rotate(1080deg);
+    opacity: 1;
+    scale: 0;
+  }
+}
+
+@keyframes spinOut {
+  to {
+    transform: rotate(1080deg) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes spinIn {
+  from {
+    transform: rotate(-360deg) scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
 /* Homepage font selectors */
 .home-font-selectors {
   position: fixed;
