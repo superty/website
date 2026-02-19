@@ -557,8 +557,30 @@ h1 {
   }
 
   .home-card {
-    flex-direction: column;
     padding: 0.5em 1em;
+  }
+
+  .home-card-top {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .home-card-top .home-info {
+    order: 1;
+  }
+
+  .home-card-top .home-photo {
+    order: 2;
+    margin-top: 0;
+  }
+
+  .home-links {
+    order: 3;
+  }
+
+  .home-photo img {
+    width: 8em;
+    height: 8em;
   }
 
   .home-font-selectors {
