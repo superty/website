@@ -73,15 +73,15 @@
     <div class="home-card">
         <div class="home-info">
             <h1>Arjun Pitchanathan</h1>
-            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Before this, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains.</p>
+            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Before this, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains. I'm always happy to chat about any of these!</p>
             <div class="home-links">
-                <a href="https://linkedin.com/in/arjunpitchanathan" target="_blank">LinkedIn</a>
+                <a href="https://linkedin.com/in/arjunpi" target="_blank">LinkedIn</a>
                 <span class="link-sep">|</span>
-                <a href="/cv" id="website-link" data-click-count="0">Website</a>
+                <a href="https://arjunpi.com" id="website-link" data-click-count="0">Website</a>
                 <span class="link-sep">|</span>
-                <a href="https://goodreads.com/arjunpitchanathan" target="_blank">Goodreads</a>
+                <a href="https://github.com/superty" target="_blank">Github</a>
                 <span class="link-sep">|</span>
-                <a href="https://github.com/arjunpitchanathan" target="_blank">Github</a>
+                <a href="https://goodreads.com/arjunp" target="_blank">Goodreads</a>
                 <span class="link-sep">|</span>
                 <a href="/photography">Photography</a>
             </div>
@@ -94,9 +94,14 @@
 
 <script>
 (function() {
-    const emojis = ['😜', '🫨', '😵‍💫'];
-    const link = document.getElementById('website-link');
-    let clickCount = 0;
+    var emojiUrls = [
+        'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1f61c.png',
+        'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1fae8.png',
+        'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1f635-200d-1f4ab.png'
+    ];
+
+    var link = document.getElementById('website-link');
+    var clickCount = 0;
 
     var origWidth = link.offsetWidth;
     link.style.display = 'inline-block';
@@ -104,11 +109,17 @@
     link.style.textAlign = 'center';
 
     link.addEventListener('click', function(e) {
-        if (clickCount < emojis.length) {
+        if (clickCount < emojiUrls.length) {
             e.preventDefault();
-            link.textContent = emojis[clickCount];
+            link.textContent = '';
+            var img = document.createElement('img');
+            img.src = emojiUrls[clickCount];
+            img.style.height = '1.2em';
+            img.style.verticalAlign = 'middle';
+            link.appendChild(img);
+            link.classList.add('emoji-link');
             clickCount++;
-            if (clickCount >= emojis.length) {
+            if (clickCount >= emojiUrls.length) {
                 link.style.cursor = 'default';
                 link.removeAttribute('href');
             }
