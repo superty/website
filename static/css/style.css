@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Adwaita Sans", "Cantarell", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #d8d0c4;
+  background: #1d1714 url('/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+}
+
+h1 {
+  font-family: "Bitter", serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #d4a054;
+  margin-top: 0;
+}
+
+a {
+  color: #d06840;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #d4a054;
+}
+
+/* Homepage */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+
+.home-spacer {
+  height: 90vh;
+}
+
+.home-footer {
+  text-align: center;
+  padding: 0;
+  color: #786858;
+  font-size: 0.85em;
+}
+
+.home-footer a {
+  color: #a89888;
+}
+
+.home-footer a:hover {
+  color: #d06840;
+}
+
+.home-card {
+  background: rgba(36, 29, 25, 0.8);
+  border: 1px solid #2e2521;
+  border-radius: 12px;
+  padding: 0.9em 1.3em 1em 1.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  max-width: 44rem;
+}
+
+.home-card-top {
+  display: flex;
+  gap: 2.5em;
+  align-items: center;
+}
+
+.home-photo {
+  margin-top: 1em;
+}
+
+.home-photo img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 2px solid #2e2420;
+}
+
+.home-blurb {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.0rem;
+  color: #c8b8a8;
+  line-height: 1.7;
+  margin-bottom: 0.6em;
+}
+
+.home-links {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  flex-wrap: wrap;
+}
+
+.home-links a.emoji-link {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.home-links a.emoji-link:hover {
+  text-decoration: none;
+}
+
+.link-sep {
+  color: #584838;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-1px, -1px) rotate(-2deg);
+  }
+
+  25% {
+    transform: translate(1px, 1px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(1px, -1px) rotate(-2deg);
+  }
+}
+
+@keyframes rockSlide {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(var(--rock-dist));
+  }
+
+  75% {
+    transform: translateX(calc(-1 * var(--rock-dist)));
+  }
+}
+
+@keyframes rockRotate {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(var(--rock-deg));
+  }
+
+  75% {
+    transform: rotate(calc(-1 * var(--rock-deg)));
+  }
+}
+
+@keyframes crossfadeOut {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(720deg);
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+@keyframes crossfadeIn {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+    scale: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  to {
+    transform: rotate(720deg);
+    opacity: 1;
+    scale: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinIn {
+  from {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .home-card {
+    padding: 0.5em 1em;
+  }
+
+  .home-card-top {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .home-card-top .home-info {
+    order: 1;
+  }
+
+  .home-card-top .home-photo {
+    order: 2;
+    margin-top: -1em;
+  }
+
+  .home-links {
+    order: 3;
+  }
+
+  .home-photo img {
+    width: 17em;
+    height: 17em;
+  }
+}

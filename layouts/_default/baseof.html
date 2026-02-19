@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="/css/style.css">
+    {{ if and .File (eq .File.ContentBaseName "cv") }}
+    <link rel="stylesheet" href="/css/cv.css">
+    {{ end }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400&family=IBM+Plex+Sans:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -13,6 +16,8 @@
     <main>
         {{ block "main" . }}{{ end }}
     </main>
+    {{ if and .File (eq .File.ContentBaseName "cv") }}
     <script src="/js/collapsible.js"></script>
+    {{ end }}
 </body>
 </html>

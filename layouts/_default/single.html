@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="cv">
+<article{{ if and .File (eq .File.ContentBaseName "cv") }} class="cv"{{ end }}>
     <header>
         <h1>{{ .Title }}</h1>
     </header>
