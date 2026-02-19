@@ -336,14 +336,18 @@ main {
 }
 
 h1 {
-  font-size: 1.8em;
+  font-family: "Bitter", serif;
+  font-weight: 400;
+  font-size: 1.8rem;
   color: #d4a054;
   margin-top: 0;
 }
 
 .home-blurb {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.0rem;
   color: #c8b8a8;
-  font-size: 0.95em;
   line-height: 1.7;
   margin-bottom: 0.6em;
 }
@@ -359,6 +363,9 @@ h1 {
 }
 
 .home-links {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.6em;
@@ -499,46 +506,6 @@ h1 {
   }
 }
 
-/* Homepage font selectors */
-.home-font-selectors {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  display: flex;
-  gap: 0.8em;
-  z-index: 10;
-}
-
-.home-font-selector {
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
-  background: #241d19;
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-  border: 1px solid #2e2521;
-}
-
-.home-font-selector label {
-  font-size: 0.8em;
-  color: #a89888;
-}
-
-.home-font-selector select {
-  background: #1d1714;
-  color: #d8d0c4;
-  border: 1px solid #2e2521;
-  padding: 0.3em 0.6em;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.85em;
-}
-
-.home-font-selector select:focus {
-  outline: none;
-  border-color: #d4a054;
-}
-
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -583,10 +550,4 @@ h1 {
     height: 17em;
   }
 
-  .home-font-selectors {
-    position: static;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1em;
-  }
 }
