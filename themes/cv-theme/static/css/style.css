@@ -16,7 +16,7 @@ body {
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 40px 0;
 }
 
 .cv header {
@@ -281,6 +281,27 @@ main {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 120px);
+}
+
+.home-spacer {
+  height: 90vh;
+}
+
+.home-footer {
+  text-align: center;
+  padding: 0;
+  color: #786858;
+  font-size: 0.85em;
+}
+
+.home-footer a {
+  color: #a89888;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.home-footer a:hover {
+  color: #d4a054;
 }
 
 .home-card {
