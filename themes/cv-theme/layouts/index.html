@@ -158,6 +158,27 @@
             spiralImg.style.animation = 'spinIn 2s linear forwards';
             setTimeout(function() {
                 spiralImg.style.animation = 'spin 2s linear infinite';
+                // Stop spinning after 20s
+                setTimeout(function() {
+                    spiralImg.style.animation = 'none';
+                    // Crossfade back to ;P after 2s
+                    setTimeout(function() {
+                        var winkImg = makeImg(emojiUrls[0]);
+                        winkImg.style.opacity = '0';
+                        link.appendChild(winkImg);
+                        // Force reflow then apply transitions
+                        winkImg.offsetHeight;
+                        spiralImg.style.transition = 'opacity 1s';
+                        winkImg.style.transition = 'opacity 1s';
+                        spiralImg.style.opacity = '0';
+                        winkImg.style.opacity = '1';
+                        setTimeout(function() {
+                            spiralImg.remove();
+                            link.style.cursor = 'pointer';
+                            clickCount = 1;
+                        }, 1000);
+                    }, 2000);
+                }, 20000);
             }, 2000);
         }, 10000);
     }
