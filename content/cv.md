@@ -4,21 +4,6 @@ date: 2025-12-23
 draft: false
 ---
 
-<div class="font-selector">
-  <label for="font-chooser">Heading:</label>
-  <select id="font-chooser">
-    <option value="bitter">Bitter</option>
-    <option value="lora">Lora</option>
-    <option value="literata">Literata</option>
-  </select>
-  <label for="body-font-chooser">Body:</label>
-  <select id="body-font-chooser">
-    <option value="adwaita">Adwaita Sans</option>
-    <option value="nunito">Nunito</option>
-    <option value="be-vietnam-pro">Be Vietnam Pro</option>
-  </select>
-</div>
-
 <div class="cv-section">
 
 ## Professional Summary
@@ -128,8 +113,6 @@ Worked on hypergraph theory and communication complexity.
 
 [World Finalist](https://cphof.org/profile/icpc:Arjun%20Pitchanathan) at the **International Collegiate Programming Competition (ICPC) 2020.**
 
-<!-- Member of the team representing IIIT Hyderabad; we qualified for and [competed at the ICPC World Finals](https://icpc.global/community/results-2020). -->
-
 </div>
 
 <div class="cv-section collapsible">
@@ -225,8 +208,6 @@ Thesis title: Efficient Static Analysis for Neural Networks
 <div class="cv-section">
 
 ## Programming Languages
-
-<!-- Performance engineering, benchmarking, compilers, theoretical computer science, algorithms. -->
 
 C++, Python, Bash, English (regular use). x86-64 assembly, LLVM IR (mostly reading).
 
