@@ -157,32 +157,14 @@
             link.appendChild(shakenImg);
 
 
-            // After crossfade, spiral spins in then rocks
+            // After crossfade, spiral spins in then continues spinning
             setTimeout(function() {
-                var wrapper = document.createElement('span');
-                wrapper.style.gridArea = '1/1';
-                wrapper.style.display = 'inline-block';
-                wrapper.style.height = '1.2em';
-                wrapper.style.lineHeight = '0';
-                var spiralImg = makeImg(emojiUrls[2]);
-                spiralImg.style.gridArea = '';
-                wrapper.appendChild(spiralImg);
-                link.appendChild(wrapper);
-                var halfRange = origWidth / 2 - 8;
-                var diameter = spiralImg.offsetHeight || 19; // fallback
-                var rollDeg = (halfRange / (Math.PI * diameter)) * 360;
-                // rock rate = rollDeg / (0.25 * rockPeriod) deg/s
-                var rockPeriod = 3;
-                var rockRate = rollDeg / (0.25 * rockPeriod);
-                var spinInDuration = 360 / rockRate;
-                spiralImg.style.animation = 'spinIn ' + spinInDuration + 's linear forwards';
-                link.style.setProperty('--rock-dist', halfRange + 'px');
-                link.style.setProperty('--rock-deg', rollDeg + 'deg');
+                var spiralImg = setEmoji(emojiUrls[2]);
+                spiralImg.style.animation = 'spinIn 2s linear forwards';
                 setTimeout(function() {
-                    wrapper.style.animation = 'rockSlide ' + rockPeriod + 's linear infinite';
-                    spiralImg.style.animation = 'rockRotate ' + rockPeriod + 's linear infinite';
-                }, spinInDuration * 1000);
-            }, 5000);
+                    spiralImg.style.animation = 'spin 2s linear infinite';
+                }, 2000);
+            }, 10000);
         }
     });
 })();

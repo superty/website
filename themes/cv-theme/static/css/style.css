@@ -438,11 +438,14 @@ main {
     opacity: 1;
   }
 
-  33.33%,
-  to {
-    transform: rotate(240deg);
+  40% {
     opacity: 0;
-    scale: 0.66;
+  }
+
+  to {
+    transform: rotate(720deg);
+    opacity: 0;
+    scale: 0;
   }
 }
 
@@ -453,7 +456,7 @@ main {
     scale: 1;
   }
 
-  33.33% {
+  40% {
     opacity: 1;
   }
 
@@ -461,6 +464,16 @@ main {
     transform: rotate(720deg);
     opacity: 1;
     scale: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
