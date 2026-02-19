@@ -3,6 +3,7 @@
     <div class="home-font-selector">
         <label>Title</label>
         <select id="title-font-select">
+            <option value='"Adwaita Sans", sans-serif'>Adwaita Sans</option>
             <option value='"Bitter", serif'>Bitter Pro</option>
             <option value='"IBM Plex Sans", sans-serif'>IBM Plex Sans</option>
             <option value='"Noto Sans", sans-serif'>Noto Sans</option>
@@ -26,6 +27,7 @@
     <div class="home-font-selector">
         <label>Body</label>
         <select id="body-font-select">
+            <option value='"Adwaita Sans", sans-serif'>Adwaita Sans</option>
             <option value='"Bitter", serif'>Bitter Pro</option>
             <option value='"IBM Plex Sans", sans-serif' selected>IBM Plex Sans</option>
             <option value='"Noto Sans", sans-serif'>Noto Sans</option>
@@ -73,7 +75,8 @@
     <div class="home-card">
         <div class="home-info">
             <h1>Arjun Pitchanathan</h1>
-            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Before this, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains. I'm always happy to chat about any of these!</p>
+            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Before, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains.</p>
+            <p class="home-blurb">I'm always happy to <a href="mailto:mail@arjunpi.com">chat</a> about any of these!</p>
             <div class="home-links">
                 <a href="https://linkedin.com/in/arjunpi" target="_blank">LinkedIn</a>
                 <span class="link-sep">|</span>
@@ -171,9 +174,11 @@ function applyFonts() {
     h1.style.fontFamily = titleSelect.value;
     h1.style.fontWeight = titleWeight.value;
     h1.style.fontSize = titleSize.value;
-    homeCard.querySelector('.home-blurb').style.fontFamily = bodySelect.value;
-    homeCard.querySelector('.home-blurb').style.fontWeight = bodyWeight.value;
-    homeCard.querySelector('.home-blurb').style.fontSize = bodySize.value;
+    homeCard.querySelectorAll('.home-blurb').forEach(function(el) {
+        el.style.fontFamily = bodySelect.value;
+        el.style.fontWeight = bodyWeight.value;
+        el.style.fontSize = bodySize.value;
+    });
     homeCard.querySelector('.home-links').style.fontFamily = linksSelect.value;
     homeCard.querySelector('.home-links').style.fontWeight = linksWeight.value;
     homeCard.querySelector('.home-links').style.fontSize = linksSize.value;
