@@ -400,90 +400,78 @@ main {
   }
 }
 
-@keyframes rock {
-  0% {
+@keyframes rockSlide {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(var(--rock-dist));
+  }
+
+  75% {
+    transform: translateX(calc(-1 * var(--rock-dist)));
+  }
+}
+
+@keyframes rockRotate {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
 
   25% {
-    transform: rotate(30deg);
+    transform: rotate(var(--rock-deg));
   }
 
   75% {
-    transform: rotate(-30deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
+    transform: rotate(calc(-1 * var(--rock-deg)));
   }
 }
 
 @keyframes crossfadeOut {
-  0% {
+  from {
     transform: rotate(0deg);
     opacity: 1;
   }
 
-  50% {
-    transform: rotate(405deg);
+  33.33%,
+  to {
+    transform: rotate(240deg);
     opacity: 0;
     scale: 0.66;
-  }
-
-  100% {
-    transform: rotate(810deg);
-    opacity: 0;
-    scale: 0.33;
   }
 }
 
 @keyframes crossfadeIn {
-  0% {
-    transform: rotate(0deg);
-    opacity: 0;
-    scale: 1;
-  }
-
-  5.5% {
+  from {
     transform: rotate(0deg);
     opacity: 0;
     scale: 1;
   }
 
   33.33% {
-    transform: rotate(360deg);
     opacity: 1;
-    scale: 1;
   }
 
-  66.66% {
+  to {
     transform: rotate(720deg);
-    opacity: 1;
-    scale: 0.5;
-  }
-
-  100% {
-    transform: rotate(1080deg);
     opacity: 1;
     scale: 0;
   }
 }
 
-@keyframes spinOut {
-  to {
-    transform: rotate(1080deg) scale(0);
-    opacity: 0;
-  }
-}
-
 @keyframes spinIn {
   from {
-    transform: rotate(-360deg) scale(0);
+    transform: rotate(0deg) scale(0);
     opacity: 0;
   }
 
   to {
-    transform: rotate(0deg) scale(1);
+    transform: rotate(360deg) scale(1);
     opacity: 1;
   }
 }
