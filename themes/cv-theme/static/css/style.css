@@ -323,7 +323,7 @@ main {
 }
 
 .home-photo {
-  margin-top: 0.3em;
+  margin-top: 1em;
 }
 
 .home-photo img {
@@ -571,7 +571,7 @@ h1 {
 
   .home-card-top .home-photo {
     order: 2;
-    margin-top: 0;
+    margin-top: -1em;
   }
 
   .home-links {
