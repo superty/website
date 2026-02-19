@@ -4,17 +4,8 @@
         <label>Title</label>
         <select id="title-font-select">
             <option value='"Bitter", serif'>Bitter Pro</option>
-            <option value='"Cantarell", sans-serif'>Cantarell</option>
-            <option value='"Google Sans Flex", sans-serif'>Google Sans Flex</option>
             <option value='"IBM Plex Sans", sans-serif'>IBM Plex Sans</option>
-            <option value='"Instrument Sans", sans-serif'>Instrument Sans</option>
-            <option value='"Inter", sans-serif'>Inter</option>
-            <option value='"Lato", sans-serif'>Lato</option>
             <option value='"Noto Sans", sans-serif'>Noto Sans</option>
-            <option value='"Open Sans", sans-serif'>Open Sans</option>
-            <option value='"Roboto Slab", serif'>Roboto Slab</option>
-            <option value='"Segoe UI", sans-serif'>Segoe UI</option>
-            <option value='"Source Sans 3", sans-serif'>Source Sans Variable</option>
         </select>
         <select id="title-weight-select">
             <option value="300">300</option>
@@ -23,22 +14,21 @@
             <option value="600">600</option>
             <option value="700" selected>700</option>
         </select>
+        <select id="title-size-select">
+            <option value="1.4em">1.4</option>
+            <option value="1.6em">1.6</option>
+            <option value="1.8em" selected>1.8</option>
+            <option value="2.0em">2.0</option>
+            <option value="2.2em">2.2</option>
+            <option value="2.5em">2.5</option>
+        </select>
     </div>
     <div class="home-font-selector">
         <label>Body</label>
         <select id="body-font-select">
             <option value='"Bitter", serif'>Bitter Pro</option>
-            <option value='"Cantarell", sans-serif'>Cantarell</option>
-            <option value='"Google Sans Flex", sans-serif'>Google Sans Flex</option>
             <option value='"IBM Plex Sans", sans-serif'>IBM Plex Sans</option>
-            <option value='"Instrument Sans", sans-serif'>Instrument Sans</option>
-            <option value='"Inter", sans-serif'>Inter</option>
-            <option value='"Lato", sans-serif'>Lato</option>
             <option value='"Noto Sans", sans-serif'>Noto Sans</option>
-            <option value='"Open Sans", sans-serif'>Open Sans</option>
-            <option value='"Roboto Slab", serif'>Roboto Slab</option>
-            <option value='"Segoe UI", sans-serif'>Segoe UI</option>
-            <option value='"Source Sans 3", sans-serif'>Source Sans Variable</option>
         </select>
         <select id="body-weight-select">
             <option value="300">300</option>
@@ -47,13 +37,43 @@
             <option value="600">600</option>
             <option value="700">700</option>
         </select>
+        <select id="body-size-select">
+            <option value="0.85em">0.85</option>
+            <option value="0.9em">0.9</option>
+            <option value="0.95em" selected>0.95</option>
+            <option value="1.0em">1.0</option>
+            <option value="1.05em">1.05</option>
+            <option value="1.1em">1.1</option>
+        </select>
+    </div>
+    <div class="home-font-selector">
+        <label>Links</label>
+        <select id="links-font-select">
+            <option value='"JetBrains Mono", monospace'>JetBrains Mono</option>
+            <option value='"Roboto Slab", serif'>Roboto Slab</option>
+        </select>
+        <select id="links-weight-select">
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500" selected>500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+        </select>
+        <select id="links-size-select">
+            <option value="0.85em">0.85</option>
+            <option value="0.9em">0.9</option>
+            <option value="0.95em" selected>0.95</option>
+            <option value="1.0em">1.0</option>
+            <option value="1.05em">1.05</option>
+            <option value="1.1em">1.1</option>
+        </select>
     </div>
 </div>
 <div class="home">
     <div class="home-card">
         <div class="home-info">
             <h1>Arjun Pitchanathan</h1>
-            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Previously, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains.</p>
+            <p class="home-blurb">Hey, I'm Arjun! I work on LLM inference. Before this, I did a PhD on efficient performance modeling, mentored by Tobias Grosser. My other interests include theoretical CS, AI safety, history, dancing, philosophy of mind, and the mountains.</p>
             <div class="home-links">
                 <a href="https://linkedin.com/in/arjunpitchanathan" target="_blank">LinkedIn</a>
                 <span class="link-sep">|</span>
@@ -62,6 +82,8 @@
                 <a href="https://goodreads.com/arjunpitchanathan" target="_blank">Goodreads</a>
                 <span class="link-sep">|</span>
                 <a href="https://github.com/arjunpitchanathan" target="_blank">Github</a>
+                <span class="link-sep">|</span>
+                <a href="/photography">Photography</a>
             </div>
         </div>
         <div class="home-photo">
@@ -99,52 +121,83 @@ var titleSelect = document.getElementById('title-font-select');
 var bodySelect = document.getElementById('body-font-select');
 var titleWeight = document.getElementById('title-weight-select');
 var bodyWeight = document.getElementById('body-weight-select');
+var titleSize = document.getElementById('title-size-select');
+var bodySize = document.getElementById('body-size-select');
+var linksSelect = document.getElementById('links-font-select');
+var linksWeight = document.getElementById('links-weight-select');
+var linksSize = document.getElementById('links-size-select');
 var homeCard = document.querySelector('.home-card');
 
-var fontWeights = JSON.parse(localStorage.getItem('fontWeights') || '{}');
+var fontPrefs = JSON.parse(localStorage.getItem('fontPrefs') || '{}');
 
-function getWeightKey(role, font) { return role + ':' + font; }
+function prefKey(role, font, prop) { return role + ':' + font + ':' + prop; }
 
-function saveWeight(role, select, weightSelect) {
-    fontWeights[getWeightKey(role, select.value)] = weightSelect.value;
-    localStorage.setItem('fontWeights', JSON.stringify(fontWeights));
+function savePref(role, fontSelect, propSelect, prop) {
+    fontPrefs[prefKey(role, fontSelect.value, prop)] = propSelect.value;
+    localStorage.setItem('fontPrefs', JSON.stringify(fontPrefs));
 }
 
-function restoreWeight(role, select, weightSelect) {
-    var saved = fontWeights[getWeightKey(role, select.value)];
-    if (saved) { weightSelect.value = saved; }
+function restorePref(role, fontSelect, propSelect, prop) {
+    var saved = fontPrefs[prefKey(role, fontSelect.value, prop)];
+    if (saved) { propSelect.value = saved; }
 }
 
 var savedTitle = localStorage.getItem('homeTitleFont');
 var savedBody = localStorage.getItem('homeBodyFont');
+var savedLinks = localStorage.getItem('homeLinksFont');
 if (savedTitle) { titleSelect.value = savedTitle; }
 if (savedBody) { bodySelect.value = savedBody; }
-restoreWeight('title', titleSelect, titleWeight);
-restoreWeight('body', bodySelect, bodyWeight);
+if (savedLinks) { linksSelect.value = savedLinks; }
+restorePref('title', titleSelect, titleWeight, 'weight');
+restorePref('title', titleSelect, titleSize, 'size');
+restorePref('body', bodySelect, bodyWeight, 'weight');
+restorePref('body', bodySelect, bodySize, 'size');
+restorePref('links', linksSelect, linksWeight, 'weight');
+restorePref('links', linksSelect, linksSize, 'size');
 
 function applyFonts() {
-    homeCard.querySelector('h1').style.fontFamily = titleSelect.value;
-    homeCard.querySelector('h1').style.fontWeight = titleWeight.value;
+    var h1 = homeCard.querySelector('h1');
+    h1.style.fontFamily = titleSelect.value;
+    h1.style.fontWeight = titleWeight.value;
+    h1.style.fontSize = titleSize.value;
     homeCard.querySelector('.home-blurb').style.fontFamily = bodySelect.value;
     homeCard.querySelector('.home-blurb').style.fontWeight = bodyWeight.value;
-    homeCard.querySelector('.home-links').style.fontFamily = bodySelect.value;
-    homeCard.querySelector('.home-links').style.fontWeight = bodyWeight.value;
+    homeCard.querySelector('.home-blurb').style.fontSize = bodySize.value;
+    homeCard.querySelector('.home-links').style.fontFamily = linksSelect.value;
+    homeCard.querySelector('.home-links').style.fontWeight = linksWeight.value;
+    homeCard.querySelector('.home-links').style.fontSize = linksSize.value;
     localStorage.setItem('homeTitleFont', titleSelect.value);
     localStorage.setItem('homeBodyFont', bodySelect.value);
-    saveWeight('title', titleSelect, titleWeight);
-    saveWeight('body', bodySelect, bodyWeight);
+    localStorage.setItem('homeLinksFont', linksSelect.value);
+    savePref('title', titleSelect, titleWeight, 'weight');
+    savePref('title', titleSelect, titleSize, 'size');
+    savePref('body', bodySelect, bodyWeight, 'weight');
+    savePref('body', bodySelect, bodySize, 'size');
+    savePref('links', linksSelect, linksWeight, 'weight');
+    savePref('links', linksSelect, linksSize, 'size');
 }
 applyFonts();
 
 titleSelect.addEventListener('change', function() {
-    restoreWeight('title', titleSelect, titleWeight);
+    restorePref('title', titleSelect, titleWeight, 'weight');
+    restorePref('title', titleSelect, titleSize, 'size');
     applyFonts();
 });
 bodySelect.addEventListener('change', function() {
-    restoreWeight('body', bodySelect, bodyWeight);
+    restorePref('body', bodySelect, bodyWeight, 'weight');
+    restorePref('body', bodySelect, bodySize, 'size');
+    applyFonts();
+});
+linksSelect.addEventListener('change', function() {
+    restorePref('links', linksSelect, linksWeight, 'weight');
+    restorePref('links', linksSelect, linksSize, 'size');
     applyFonts();
 });
 titleWeight.addEventListener('change', applyFonts);
 bodyWeight.addEventListener('change', applyFonts);
+linksWeight.addEventListener('change', applyFonts);
+titleSize.addEventListener('change', applyFonts);
+bodySize.addEventListener('change', applyFonts);
+linksSize.addEventListener('change', applyFonts);
 </script>
 {{ end }}
