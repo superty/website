@@ -423,4 +423,11 @@ main {
   .home-links {
     justify-content: center;
   }
+
+  .home-font-selectors {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+  }
 }
