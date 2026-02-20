@@ -35,10 +35,12 @@
 (function() {
     var seps = document.querySelectorAll('.link-sep');
     function updateSeps() {
+        seps.forEach(function(sep) { sep.style.display = ''; });
         seps.forEach(function(sep) {
             var prev = sep.previousElementSibling;
             var next = sep.nextElementSibling;
-            sep.style.visibility = (prev && next && prev.getBoundingClientRect().top === next.getBoundingClientRect().top) ? '' : 'hidden';
+            if (prev && next && prev.getBoundingClientRect().top !== next.getBoundingClientRect().top)
+                sep.style.display = 'none';
         });
     }
     updateSeps();
