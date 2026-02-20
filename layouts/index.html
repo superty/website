@@ -38,7 +38,7 @@
         seps.forEach(function(sep) {
             var prev = sep.previousElementSibling;
             var next = sep.nextElementSibling;
-            sep.style.display = (prev && next && prev.getBoundingClientRect().top === next.getBoundingClientRect().top) ? '' : 'none';
+            sep.style.visibility = (prev && next && prev.getBoundingClientRect().top === next.getBoundingClientRect().top) ? '' : 'hidden';
         });
     }
     updateSeps();
