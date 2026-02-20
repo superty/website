@@ -33,6 +33,17 @@
 
 <script>
 (function() {
+    var seps = document.querySelectorAll('.link-sep');
+    function updateSeps() {
+        seps.forEach(function(sep) {
+            var prev = sep.previousElementSibling;
+            var next = sep.nextElementSibling;
+            sep.style.display = (prev && next && prev.getBoundingClientRect().top === next.getBoundingClientRect().top) ? '' : 'none';
+        });
+    }
+    updateSeps();
+    window.addEventListener('resize', updateSeps);
+
     var emojiUrls = [
         'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1f61c.png',
         'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1f62e.png',
