@@ -113,6 +113,17 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.home-link-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.home-link-row + .home-link-row::before {
+  content: "|";
+  color: #584838;
+}
+
 .home-links a.emoji-link {
   font-size: 1.2em;
   text-decoration: none;
@@ -266,7 +277,12 @@ a:hover {
 
   .home-links {
     order: 3;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-link-row + .home-link-row::before {
+    content: none;
   }
 
   .home-photo img {

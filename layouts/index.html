@@ -12,17 +12,20 @@
             </div>
         </div>
         <div class="home-links">
-            <a href="/notes">Notes</a>
-            <span class="link-sep">|</span>
-            <a href="https://goodreads.com/arjunp" target="_blank">Goodreads</a>
-            <span class="link-sep">|</span>
-            <a href="/photography">Photos</a>
-            <span class="link-sep">|</span>
-            <a href="https://github.com/superty" target="_blank">GitHub</a>
-            <span class="link-sep">|</span>
-            <a href="https://arjunpi.com" id="website-link" data-click-count="0">Website</a>
-            <span class="link-sep">|</span>
-            <a href="https://linkedin.com/in/arjunpi" target="_blank">LinkedIn</a>
+            <div class="home-link-row">
+                <a href="/notes">Notes</a>
+                <span class="link-sep">|</span>
+                <a href="https://goodreads.com/arjunp" target="_blank">Goodreads</a>
+                <span class="link-sep">|</span>
+                <a href="/photography">Photos</a>
+            </div>
+            <div class="home-link-row">
+                <a href="https://github.com/superty" target="_blank">GitHub</a>
+                <span class="link-sep">|</span>
+                <a href="https://arjunpi.com" id="website-link" data-click-count="0">Website</a>
+                <span class="link-sep">|</span>
+                <a href="https://linkedin.com/in/arjunpi" target="_blank">LinkedIn</a>
+            </div>
         </div>
     </div>
 </div>
@@ -33,19 +36,6 @@
 
 <script>
 (function() {
-    var seps = document.querySelectorAll('.link-sep');
-    function updateSeps() {
-        seps.forEach(function(sep) { sep.style.display = ''; });
-        seps.forEach(function(sep) {
-            var prev = sep.previousElementSibling;
-            var next = sep.nextElementSibling;
-            if (prev && next && prev.getBoundingClientRect().top !== next.getBoundingClientRect().top)
-                sep.style.display = 'none';
-        });
-    }
-    updateSeps();
-    window.addEventListener('resize', updateSeps);
-
     var emojiUrls = [
         'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1f61c.png',
         'https://raw.githubusercontent.com/discord/twemoji/master/assets/72x72/1f62e.png',
