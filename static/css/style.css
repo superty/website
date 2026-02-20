@@ -266,6 +266,7 @@ a:hover {
 
   .home-links {
     order: 3;
+    justify-content: center;
   }
 
   .home-photo img {
